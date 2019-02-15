@@ -82,21 +82,36 @@ PrefabInstance:
       propertyPath: respawn
       value: Respawn_P4
       objectReference: {fileID: 0}
+    - target: {fileID: 7054379106487953290, guid: b11646bcb66852a4e840d6a0b1b3d12d,
+        type: 3}
+      propertyPath: controller
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6439882919416087562, guid: b11646bcb66852a4e840d6a0b1b3d12d,
         type: 3}
       propertyPath: playerNum
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 7054379105215252963, guid: b11646bcb66852a4e840d6a0b1b3d12d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bb01edbf53bee2a4aac294dd2b3fd6bc, type: 2}
     - target: {fileID: 4355396565997319499, guid: b11646bcb66852a4e840d6a0b1b3d12d,
         type: 3}
       propertyPath: respawn
       value: Respawn_P4
       objectReference: {fileID: 0}
+    - target: {fileID: 4355396565997319499, guid: b11646bcb66852a4e840d6a0b1b3d12d,
+        type: 3}
+      propertyPath: controller
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401311908651131653, guid: b11646bcb66852a4e840d6a0b1b3d12d,
+        type: 3}
+      propertyPath: jetSound
+      value: 
+      objectReference: {fileID: 3291929965994632905}
+    - target: {fileID: 7054379105215252963, guid: b11646bcb66852a4e840d6a0b1b3d12d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb01edbf53bee2a4aac294dd2b3fd6bc, type: 2}
     - target: {fileID: 5258331927107181346, guid: b11646bcb66852a4e840d6a0b1b3d12d,
         type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
@@ -109,3 +124,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b11646bcb66852a4e840d6a0b1b3d12d, type: 3}
+--- !u!82 &3291929965994632905 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6330128924135045480, guid: b11646bcb66852a4e840d6a0b1b3d12d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8824357527839596449}
+  m_PrefabAsset: {fileID: 0}

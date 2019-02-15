@@ -7,6 +7,14 @@ public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI P1Score,P2Score,P3Score,P4Score;
 
+    private void Awake()
+    {
+        P1Score.color = new Color32(255, 0, 0, 255);
+        P2Score.color = new Color32(0, 0, 255, 255);
+        P3Score.color = new Color32(0, 255, 0, 255);
+        P4Score.color = new Color32(255, 255, 0, 255);
+    }
+
     private void LateUpdate()
     {
         P1Score.text = "P1 Score: " + GameStats.Player1Score;

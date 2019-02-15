@@ -221,8 +221,7 @@ MonoBehaviour:
   turnSpeed: 250
   hoverForce: 100
   hoverHeight: 2.5
-  vertical: Vertical_P1
-  horizontal: Horizontal_P1
+  controller: 1
 --- !u!65 &1582453601816915790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -266,6 +265,7 @@ MonoBehaviour:
   respawn: Respawn_P1
   checkpointCount: 0
   respawnPoint: {fileID: 0}
+  controller: 1
 --- !u!82 &8092585934450225320
 AudioSource:
   m_ObjectHideFlags: 0

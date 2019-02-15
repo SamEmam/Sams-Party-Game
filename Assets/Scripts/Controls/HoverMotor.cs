@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class HoverMotor : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class HoverMotor : MonoBehaviour
     private float turnInput;
     private Rigidbody carRigidbody;
 
-    public string vertical = "Vertical_P1";
-    public string horizontal = "Horizontal_P1";
+    public XboxController controller;
+    
     
 
 
@@ -25,9 +26,9 @@ public class HoverMotor : MonoBehaviour
 
     void Update()
     {
-        powerInput = Input.GetAxis(vertical);
-        turnInput = Input.GetAxis(horizontal);
-        
+        powerInput = XCI.GetAxis(XboxAxis.LeftStickY, controller);
+        turnInput = XCI.GetAxis(XboxAxis.RightStickX, controller);
+
     }
 
    

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class RespawnComponent : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class RespawnComponent : MonoBehaviour
 
     public Transform respawnPoint;
 
+    public XboxController controller;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,10 +20,14 @@ public class RespawnComponent : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown(respawn))
+        if (XCI.GetButtonDown(XboxButton.Y, controller))
         {
             Respawn(respawnPoint);
         }
+        //if (Input.GetButtonDown(respawn))
+        //{
+        //    Respawn(respawnPoint);
+        //}
     }
 
     void Respawn(Transform resPoint)

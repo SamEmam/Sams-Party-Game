@@ -6333,6 +6333,7 @@ MonoBehaviour:
   vertical: Vertical_P1
   horizontal: Horizontal_P1
   brake: Handbrake_P1
+  controller: 1
 --- !u!114 &2121462451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6398,7 +6399,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawn: Respawn_P1
+  checkpointCount: 0
   respawnPoint: {fileID: 0}
+  controller: 1
 --- !u!1001 &1070933059
 PrefabInstance:
   m_ObjectHideFlags: 0

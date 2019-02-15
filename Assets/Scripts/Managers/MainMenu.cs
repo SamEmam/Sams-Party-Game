@@ -21,7 +21,9 @@ public class MainMenu : MonoBehaviour
 
     public void RandomLevel()
     {
-        int index = Random.Range(2, 17);
+        //sceneFader.FadeTo(20);
+
+        int index = Random.Range(2, 22);
         if (index == GameStats.PreviousLevel)
         {
             RandomLevel();

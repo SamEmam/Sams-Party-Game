@@ -49,6 +49,8 @@ namespace UnityStandardAssets.Vehicles.Car
         private bool m_StartedSound; // flag for knowing if we have started sounds
         private CarController m_CarController; // Reference to car we are controlling
 
+        private float vol = 0.5f;
+
 
         private void StartSound()
         {
@@ -141,10 +143,10 @@ namespace UnityStandardAssets.Vehicles.Car
                     decFade = 1 - ((1 - decFade)*(1 - decFade));
 
                     // adjust the source volumes based on the fade values
-                    m_LowAccel.volume = lowFade*accFade;
-                    m_LowDecel.volume = lowFade*decFade;
-                    m_HighAccel.volume = highFade*accFade;
-                    m_HighDecel.volume = highFade*decFade;
+                    m_LowAccel.volume = lowFade*accFade * vol;
+                    m_LowDecel.volume = lowFade*decFade * vol;
+                    m_HighAccel.volume = highFade*accFade * vol;
+                    m_HighDecel.volume = highFade*decFade * vol;
 
                     // adjust the doppler levels
                     m_HighAccel.dopplerLevel = useDoppler ? dopplerLevel : 0;

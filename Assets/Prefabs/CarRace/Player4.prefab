@@ -6549,6 +6549,7 @@ MonoBehaviour:
   vertical: Vertical_P4
   horizontal: Horizontal_P4
   brake: Handbrake_P4
+  controller: 4
 --- !u!114 &7582312271716539886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6599,7 +6600,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawn: Respawn_P4
+  checkpointCount: 0
   respawnPoint: {fileID: 0}
+  controller: 4
 --- !u!114 &7390524459234696627
 MonoBehaviour:
   m_ObjectHideFlags: 0

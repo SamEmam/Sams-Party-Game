@@ -6008,6 +6008,7 @@ MonoBehaviour:
   vertical: Vertical_P3
   horizontal: Horizontal_P3
   brake: Handbrake_P3
+  controller: 3
 --- !u!114 &7312566162308122951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6073,7 +6074,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawn: Respawn_P3
+  checkpointCount: 0
   respawnPoint: {fileID: 0}
+  controller: 3
 --- !u!1 &7312566162350086084
 GameObject:
   m_ObjectHideFlags: 0

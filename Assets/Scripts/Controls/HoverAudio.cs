@@ -15,6 +15,7 @@ public class HoverAudio : MonoBehaviour
     void Awake()
     {
         carRigidbody = GetComponent<Rigidbody>();
+        jetSound.volume = 0.5f;
     }
 
     private void FixedUpdate()

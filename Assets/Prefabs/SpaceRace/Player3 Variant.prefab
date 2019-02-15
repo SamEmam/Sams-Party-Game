@@ -27,6 +27,11 @@ PrefabInstance:
       propertyPath: respawn
       value: Respawn_P3
       objectReference: {fileID: 0}
+    - target: {fileID: 5382436640788014697, guid: f6cf8cc1c948ad14393288b41096f72b,
+        type: 3}
+      propertyPath: controller
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5382436640788014703, guid: f6cf8cc1c948ad14393288b41096f72b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -87,16 +92,26 @@ PrefabInstance:
       propertyPath: playerNum
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5382436642199603200, guid: f6cf8cc1c948ad14393288b41096f72b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4d582a11b838bac48a2e31af10fc9b55, type: 2}
     - target: {fileID: 1667752335136814248, guid: f6cf8cc1c948ad14393288b41096f72b,
         type: 3}
       propertyPath: respawn
       value: Respawn_P3
       objectReference: {fileID: 0}
+    - target: {fileID: 1667752335136814248, guid: f6cf8cc1c948ad14393288b41096f72b,
+        type: 3}
+      propertyPath: controller
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323345575100637926, guid: f6cf8cc1c948ad14393288b41096f72b,
+        type: 3}
+      propertyPath: jetSound
+      value: 
+      objectReference: {fileID: 6330128924135045480}
+    - target: {fileID: 5382436642199603200, guid: f6cf8cc1c948ad14393288b41096f72b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d582a11b838bac48a2e31af10fc9b55, type: 2}
     - target: {fileID: 7182442023444552385, guid: f6cf8cc1c948ad14393288b41096f72b,
         type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
@@ -119,3 +134,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6cf8cc1c948ad14393288b41096f72b, type: 3}
+--- !u!82 &6330128924135045480 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8974921199518693515, guid: f6cf8cc1c948ad14393288b41096f72b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3122245719177658851}
+  m_PrefabAsset: {fileID: 0}

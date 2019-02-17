@@ -20,8 +20,9 @@ public class SpawnScript : MonoBehaviour
     {
         if (Vector3.Distance(vehicle1.position, transform.position) <= distanceToSpawn || Vector3.Distance(vehicle2.position, transform.position) <= distanceToSpawn || Vector3.Distance(vehicle3.position, transform.position) <= distanceToSpawn || Vector3.Distance(vehicle4.position, transform.position) <= distanceToSpawn)
         {
-            transform.position = new Vector3(0, 0, transform.position.z + blockSize);
+            
             Instantiate(obj[Random.Range(0, obj.GetLength(0))], transform.position, Quaternion.identity);
+            transform.position = new Vector3(0, 0, transform.position.z + blockSize);
 
         }
     }

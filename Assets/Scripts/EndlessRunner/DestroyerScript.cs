@@ -5,8 +5,8 @@ using UnityEngine;
 public class DestroyerScript : MonoBehaviour
 {
     private BoxCollider killFloor;
-    private int reward;
-    private int playersLeft;
+    private int reward = 3;
+    public int playersLeft;
     public ParticleSystem deathEffect;
 
     public SceneFader sceneFader;
@@ -25,10 +25,10 @@ public class DestroyerScript : MonoBehaviour
     {
         killFloor = GetComponent<BoxCollider>();
 
-        //player1.SetActive(false);
-        //player2.SetActive(false);
-        //player3.SetActive(false);
-        //player4.SetActive(false);
+        player1.SetActive(false);
+        player2.SetActive(false);
+        player3.SetActive(false);
+        player4.SetActive(false);
 
         if (GameStats.Player1)
         {
@@ -81,16 +81,16 @@ public class DestroyerScript : MonoBehaviour
 
     private void Update()
     {
-        //if (playersLeft <= 1)
-        //{
-            
-        //    if (GameStats.Player1) { p1Score.UpdateScore(); }
-        //    if (GameStats.Player2) { p2Score.UpdateScore(); }
-        //    if (GameStats.Player3) { p3Score.UpdateScore(); }
-        //    if (GameStats.Player4) { p4Score.UpdateScore(); }
+        if (playersLeft <= 1)
+        {
 
-        //    StartCoroutine(EndScene());
-        //}
+            if (GameStats.Player1) { p1Score.UpdateScore(); }
+            if (GameStats.Player2) { p2Score.UpdateScore(); }
+            if (GameStats.Player3) { p3Score.UpdateScore(); }
+            if (GameStats.Player4) { p4Score.UpdateScore(); }
+
+            StartCoroutine(EndScene());
+        }
     }
 
     IEnumerator EndScene()

@@ -64,7 +64,7 @@ public class Soccer : MonoBehaviour
                     ps1.score++;
                     ps1.UpdateScore();
                 }
-                if (GameStats.Player2)
+                if (GameStats.Player3)
                 {
                     ps2.score++;
                     ps2.UpdateScore();
@@ -94,7 +94,7 @@ public class Soccer : MonoBehaviour
                 //t1p1.transform.position = t2p1Pos;
                 //t1p1.transform.position = t2p2Pos;
 
-                if (GameStats.Player3)
+                if (GameStats.Player2)
                 {
                     ps3.score++;
                     ps3.UpdateScore();

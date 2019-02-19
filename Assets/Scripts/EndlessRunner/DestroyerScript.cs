@@ -59,7 +59,7 @@ public class DestroyerScript : MonoBehaviour
             playersLeft++;
         }
 
-        reward = playersLeft;           // set reward equal to players in game
+        reward = playersLeft-1;           // set reward equal to players in game
 
         if (GameStats.Player1)
         {
@@ -108,7 +108,7 @@ public class DestroyerScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             PlayerScore ps = other.GetComponent<PlayerScore>();
-            ps.score -= playersLeft;
+            ps.score -= playersLeft - 1;
             ps.UpdateScore();
             playersLeft--;
             Destroy(other.gameObject);

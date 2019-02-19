@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class GameStats
 {
-    private static int player1Score, player2Score, player3Score, player4Score, previousLevel;
+    private static int player1Score, player2Score, player3Score, player4Score, previousLevel, previousPreviousLevel;
     private static bool player1 = false, player2 = false, player3 = false, player4 = false;
 
     // get & set players joined
@@ -109,6 +109,17 @@ public static class GameStats
         set
         {
             previousLevel = value;
+        }
+    }
+    public static int PreviousPreviousLevel
+    {
+        get
+        {
+            return previousPreviousLevel;
+        }
+        set
+        {
+            previousPreviousLevel = value;
         }
     }
 }

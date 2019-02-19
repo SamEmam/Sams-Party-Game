@@ -26,8 +26,16 @@ public class HoverMotor : MonoBehaviour
 
     void Update()
     {
-        powerInput = XCI.GetAxis(XboxAxis.LeftStickY, controller);
-        turnInput = XCI.GetAxis(XboxAxis.RightStickX, controller);
+        turnInput = XCI.GetAxis(XboxAxis.LeftStickX, controller);
+
+        if (XCI.GetAxis(XboxAxis.RightTrigger, controller) > 0)
+        {
+            powerInput = XCI.GetAxis(XboxAxis.RightTrigger, controller);
+        }
+        else
+        {
+            powerInput = XCI.GetAxis(XboxAxis.LeftTrigger, controller) * -1;
+        }
 
     }
 

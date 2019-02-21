@@ -22,7 +22,7 @@ public class BattleManager : MonoBehaviour
 
     private void Awake()
     {
-        
+
         player1.SetActive(false);
         player2.SetActive(false);
         player3.SetActive(false);

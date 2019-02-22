@@ -8,7 +8,7 @@ public class CRLevelCreator : MonoBehaviour
 
     private GameObject tempLane;
 
-    private int zPosition = 4;
+    private float zPosition = 4.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class CRLevelCreator : MonoBehaviour
 
     public void CreateLanes()
     {
-        int i;
+        float i;
         for (i = zPosition; i < zPosition + 40; i++)
         {
             tempLane = Instantiate(lanes[Random.Range(0, lanes.Length)], new Vector3(0, 0, i), Quaternion.identity) as GameObject;

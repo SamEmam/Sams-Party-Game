@@ -21,10 +21,10 @@ public class MainMenu : MonoBehaviour
 
     public void RandomLevel()
     {
-        //sceneFader.FadeTo(29);
+        //sceneFader.FadeTo(30);
         //int index = Random.Range(16, 21);
 
-        int index = Random.Range(2, 30);
+        int index = Random.Range(2, 31);
         if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
         {
             RandomLevel();

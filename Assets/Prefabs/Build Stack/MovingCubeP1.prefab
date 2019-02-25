@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8754660971245202689}
   - component: {fileID: 6160293551318922128}
   m_Layer: 0
-  m_Name: MovingCube
+  m_Name: MovingCubeP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5340186260152118773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.55, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0.55, z: -1.5}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,3 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f40e1d843786d647aef2c32d0f3fba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: p1Score
+  playerObject: {fileID: 0}
+  BSPM: {fileID: 0}
+  currentCube: {fileID: 0}
+  lastCube: {fileID: 0}
+  gameManager: GameManagerP1
+  moveSpeed: 1

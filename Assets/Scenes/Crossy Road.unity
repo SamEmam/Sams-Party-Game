@@ -539,6 +539,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 6.269471e-18
       objectReference: {fileID: 0}
+    - target: {fileID: 13775796, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73d614c90a349e44f8fcfde04e64b1a5, type: 2}
     - target: {fileID: 445946, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.000000053162893
@@ -735,10 +739,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -96.506004
       objectReference: {fileID: 0}
-    - target: {fileID: 13775796, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 73d614c90a349e44f8fcfde04e64b1a5, type: 2}
     m_RemovedComponents:
     - {fileID: 9583748, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
@@ -2233,12 +2233,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pitch: 50
-  Yaw: 300
+  Yaw: 340
   Roll: 0
   PaddingLeft: 5
   PaddingRight: 10
-  PaddingUp: 5
-  PaddingDown: 7
+  PaddingUp: 10
+  PaddingDown: 5
   MoveSmoothTime: 0.1
 --- !u!81 &1623935905
 AudioListener:
@@ -2399,6 +2399,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 6.269471e-18
       objectReference: {fileID: 0}
+    - target: {fileID: 13775796, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f18c317110d12745a115e02a2d6b738, type: 2}
     - target: {fileID: 445946, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.000000053162893
@@ -2595,10 +2599,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -96.506004
       objectReference: {fileID: 0}
-    - target: {fileID: 13775796, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0f18c317110d12745a115e02a2d6b738, type: 2}
     m_RemovedComponents:
     - {fileID: 9583748, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
@@ -2768,6 +2768,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 6.269471e-18
       objectReference: {fileID: 0}
+    - target: {fileID: 13775796, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 386270fd98c83cc47ad06abdee1cb105, type: 2}
     - target: {fileID: 445946, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.000000053162893
@@ -2964,10 +2968,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -96.506004
       objectReference: {fileID: 0}
-    - target: {fileID: 13775796, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 386270fd98c83cc47ad06abdee1cb105, type: 2}
     m_RemovedComponents:
     - {fileID: 9583748, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 757a92e57a44cbb4d90287bc19932523, type: 3}

@@ -112,7 +112,7 @@ public class DestroyerScript : MonoBehaviour
             ps.UpdateScore();
             playersLeft--;
             Destroy(other.gameObject);
-            Instantiate(deathEffect, other.transform.position, Quaternion.LookRotation(Vector3.up));
+            Instantiate(ps.finishParticles, other.transform.position, Quaternion.LookRotation(Vector3.up));
         }
         else
         {

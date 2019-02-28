@@ -15,7 +15,7 @@ public class DriverTiltManager : MonoBehaviour
     
 
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         rightShoulder.localEulerAngles = new Vector3(rightStartRotation.x, rightStartRotation.y, rightStartRotation.z + (XCI.GetAxis(XboxAxis.LeftStickX, controller) * maxTilt));
         leftShoulder.localEulerAngles = new Vector3(leftStartRotation.x, leftStartRotation.y, leftStartRotation.z + (XCI.GetAxis(XboxAxis.LeftStickX, controller) * maxTilt));

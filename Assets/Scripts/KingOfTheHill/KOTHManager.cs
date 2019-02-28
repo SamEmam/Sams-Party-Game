@@ -118,6 +118,7 @@ public class KOTHManager : MonoBehaviour
             ps.score -= playersLeft;
             ps.UpdateScore();
             playersLeft--;
+            Instantiate(ps.finishParticles, other.transform.position, Quaternion.LookRotation(Vector3.up));
             Destroy(other.gameObject);
         }
     }

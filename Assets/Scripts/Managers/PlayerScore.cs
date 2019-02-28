@@ -7,6 +7,7 @@ public class PlayerScore : MonoBehaviour
     public int playerNum;
     public int score = 0;
     public int laps = 0;
+    public GameObject finishParticles;
 
     private void Awake()
     {

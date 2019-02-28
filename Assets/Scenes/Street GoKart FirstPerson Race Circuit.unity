@@ -12309,8 +12309,8 @@ Camera:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.5647059, g: 0.6862745, b: 0.49411768, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -22336,6 +22336,8 @@ MonoBehaviour:
   playerNum: 2
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: 8e758e3a6b9373744856120e4df0f9ed,
+    type: 3}
 --- !u!65 &1199042452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22480,10 +22482,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: 2
   rightShoulder: {fileID: 1363267007}
-  rightRotation: {x: 0, y: 0, z: 0}
   leftShoulder: {fileID: 1560630518}
-  leftStartRotation: {x: 0, y: 180, z: 270}
-  leftRotation: {x: 0, y: 0, z: 0}
+  maxTilt: 15
 --- !u!1 &1200162524
 GameObject:
   m_ObjectHideFlags: 0
@@ -35832,6 +35832,8 @@ MonoBehaviour:
   playerNum: 4
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: b70054fb5b504de4e800dc0aaba5c315,
+    type: 3}
 --- !u!65 &1764503712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35976,10 +35978,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: 4
   rightShoulder: {fileID: 1167268909}
-  rightRotation: {x: 0, y: 0, z: 0}
   leftShoulder: {fileID: 306386860}
-  leftStartRotation: {x: 0, y: 180, z: 270}
-  leftRotation: {x: 0, y: 0, z: 0}
+  maxTilt: 15
 --- !u!1001 &1771727080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43516,6 +43516,8 @@ MonoBehaviour:
   playerNum: 3
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: 8573c0a256968ae4a85c76c7374a6cd0,
+    type: 3}
 --- !u!65 &1949390360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43660,10 +43662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: 3
   rightShoulder: {fileID: 1277327130}
-  rightRotation: {x: 0, y: 0, z: 0}
   leftShoulder: {fileID: 391961472}
-  leftStartRotation: {x: 0, y: 180, z: 270}
-  leftRotation: {x: 0, y: 0, z: 0}
+  maxTilt: 15
 --- !u!1001 &1949855892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54124,10 +54124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: 1
   rightShoulder: {fileID: 1393714235}
-  rightRotation: {x: 0, y: 0, z: 0}
   leftShoulder: {fileID: 647677022}
-  leftStartRotation: {x: 0, y: 180, z: 270}
-  leftRotation: {x: 0, y: 0, z: 0}
+  maxTilt: 15
 --- !u!114 &8361719241895403347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54143,6 +54141,8 @@ MonoBehaviour:
   playerNum: 1
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: da0995cff262a8a4abe5089d20bb9bae,
+    type: 3}
 --- !u!65 &8361719241895403348
 BoxCollider:
   m_ObjectHideFlags: 0

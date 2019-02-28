@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         ps.UpdateScore();
         bm.playersLeft--;
         Destroy(this.gameObject);
-        Instantiate(deathEffect, transform.position, Quaternion.LookRotation(Vector3.up));
+        Instantiate(ps.finishParticles, transform.position, Quaternion.LookRotation(Vector3.up));
         
     }
 

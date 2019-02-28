@@ -9,7 +9,6 @@ public class FinishLine : MonoBehaviour
     public int playersLeft = 0;
     public int raceLaps;
     public int raceCheckpoints;
-    public ParticleSystem finishParticles;
 
     private void Awake()
     {
@@ -42,7 +41,7 @@ public class FinishLine : MonoBehaviour
                 ps.UpdateScore();
                 rewardScore--;
 
-                Instantiate(finishParticles, other.gameObject.transform.position, other.gameObject.transform.rotation);
+                Instantiate(ps.finishParticles, other.gameObject.transform.position, other.gameObject.transform.rotation);
                 Destroy(other.gameObject, 1f);
 
                 playersLeft--;

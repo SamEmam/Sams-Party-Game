@@ -179,6 +179,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1144762500557144282, guid: aa5ca2c59d835bb4f8f629edf61caaf3,
+        type: 3}
+      propertyPath: finishParticles
+      value: 
+      objectReference: {fileID: 6756967993453256166, guid: 8e758e3a6b9373744856120e4df0f9ed,
+        type: 3}
     - target: {fileID: 3945958654528547952, guid: aa5ca2c59d835bb4f8f629edf61caaf3,
         type: 3}
       propertyPath: m_Material
@@ -677,6 +683,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7390524459234696627, guid: 895c251ae89cc374890b52f7b56ddf85,
+        type: 3}
+      propertyPath: finishParticles
+      value: 
+      objectReference: {fileID: 6756967993453256166, guid: b70054fb5b504de4e800dc0aaba5c315,
+        type: 3}
     - target: {fileID: 1873289575719890417, guid: 895c251ae89cc374890b52f7b56ddf85,
         type: 3}
       propertyPath: m_Material
@@ -912,6 +924,8 @@ MonoBehaviour:
   playerNum: 1
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: da0995cff262a8a4abe5089d20bb9bae,
+    type: 3}
 --- !u!65 &911907166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1332,6 +1346,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8065172148774828921, guid: b9e353d381c3d2445b850f8b4596c563,
+        type: 3}
+      propertyPath: finishParticles
+      value: 
+      objectReference: {fileID: 6756967993453256166, guid: 8573c0a256968ae4a85c76c7374a6cd0,
+        type: 3}
     - target: {fileID: 8286655441625909876, guid: b9e353d381c3d2445b850f8b4596c563,
         type: 3}
       propertyPath: m_Material

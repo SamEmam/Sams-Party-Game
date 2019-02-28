@@ -18,14 +18,7 @@ public class StartGame : MonoBehaviour
         {
             tempList.Add(i);
         }
-
-        //for (int i = 0; i < tempList.Count; i++)
-        //{
-        //    int temp = tempList.Count;
-        //    int randomIndex = Random.Range(i, tempList.Count);
-        //    tempList[i] = tempList[randomIndex];
-        //    tempList[randomIndex] = temp;
-        //}
+        
 
         for (int i = 0; i < tempList.Count - 1; i++)
         {

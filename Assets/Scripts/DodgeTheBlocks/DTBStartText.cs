@@ -25,8 +25,8 @@ public class DTBStartText : MonoBehaviour
         countdown -= Time.deltaTime;
         if (countdown <= 0 && i < message.Length)
         {
-            i++;
             text.text = message[i];
+            i++;
             countdown = messageTime;
         }
 

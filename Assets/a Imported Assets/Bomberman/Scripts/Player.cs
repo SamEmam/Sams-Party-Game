@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 
 
     public XboxController controller;
+    public bool isPreGame = false;
 
 
     // Use this for initialization
@@ -171,6 +172,10 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter (Collider other)
     {
+        if (isPreGame)
+        {
+            return;
+        }
         if (other.CompareTag ("Explosion"))
         {
             
@@ -183,7 +188,7 @@ public class Player : MonoBehaviour
             ps.UpdateScore();
             bm.playersLeft--;
             Destroy(this.gameObject);
-            Instantiate(deathEffect, transform.position, Quaternion.LookRotation(Vector3.up));
+            Instantiate(ps.finishParticles, transform.position, Quaternion.LookRotation(Vector3.up));
             dead = true; // 1
         }
     }

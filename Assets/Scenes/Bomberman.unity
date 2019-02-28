@@ -10012,6 +10012,8 @@ MonoBehaviour:
   playerNum: 4
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: b70054fb5b504de4e800dc0aaba5c315,
+    type: 3}
 --- !u!136 &773076299
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10049,6 +10051,7 @@ MonoBehaviour:
   startBombs: 2
   bombPrefab: {fileID: 124052, guid: 6291891f72f724c4eae6be6052e78735, type: 3}
   controller: 4
+  isPreGame: 0
 --- !u!54 &773076301
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10539,6 +10542,8 @@ MonoBehaviour:
   playerNum: 3
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: 8573c0a256968ae4a85c76c7374a6cd0,
+    type: 3}
 --- !u!136 &806507945
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10576,6 +10581,7 @@ MonoBehaviour:
   startBombs: 2
   bombPrefab: {fileID: 124052, guid: 6291891f72f724c4eae6be6052e78735, type: 3}
   controller: 3
+  isPreGame: 0
 --- !u!54 &806507947
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17291,6 +17297,8 @@ MonoBehaviour:
   playerNum: 1
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: da0995cff262a8a4abe5089d20bb9bae,
+    type: 3}
 --- !u!136 &1188141371
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17328,6 +17336,7 @@ MonoBehaviour:
   startBombs: 2
   bombPrefab: {fileID: 124052, guid: 6291891f72f724c4eae6be6052e78735, type: 3}
   controller: 1
+  isPreGame: 0
 --- !u!54 &1188141373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29612,6 +29621,8 @@ MonoBehaviour:
   playerNum: 2
   score: 0
   laps: 0
+  finishParticles: {fileID: 6756967993453256166, guid: 8e758e3a6b9373744856120e4df0f9ed,
+    type: 3}
 --- !u!136 &2026837867
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29649,6 +29660,7 @@ MonoBehaviour:
   startBombs: 2
   bombPrefab: {fileID: 124052, guid: 6291891f72f724c4eae6be6052e78735, type: 3}
   controller: 2
+  isPreGame: 0
 --- !u!54 &2026837869
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -315,6 +315,7 @@ MonoBehaviour:
   playerNum: 1
   score: 0
   laps: 0
+  finishParticles: {fileID: 0}
 --- !u!114 &80263957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +505,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237435367}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1014,7 +1015,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594755740}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1082,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardScore: 0
-  bestOutOf: 1
+  bestOutOf: 2
   playersLeft: 0
   t1p1: {fileID: 80263955}
   t1p1Pos: {x: 0, y: 0, z: 0}
@@ -1093,7 +1094,7 @@ MonoBehaviour:
   t2p2: {fileID: 277315511}
   t2p2Pos: {x: 0, y: 0, z: 0}
   team: 1
-  finishParticles: {fileID: 8659536387359137976, guid: 8573c0a256968ae4a85c76c7374a6cd0,
+  finishParticles: {fileID: 8659536387359137976, guid: da0995cff262a8a4abe5089d20bb9bae,
     type: 3}
   sceneFader: {fileID: 738895840}
 --- !u!1001 &654410920
@@ -1800,7 +1801,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835927804}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2153,7 +2154,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125828347}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2197,7 +2198,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163188447}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2241,7 +2242,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182518400}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3065,7 +3066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardScore: 0
-  bestOutOf: 1
+  bestOutOf: 2
   playersLeft: 0
   t1p1: {fileID: 80263955}
   t1p1Pos: {x: 0, y: 0, z: 0}
@@ -3076,7 +3077,7 @@ MonoBehaviour:
   t2p2: {fileID: 277315511}
   t2p2Pos: {x: 0, y: 0, z: 0}
   team: 2
-  finishParticles: {fileID: 8659536387359137976, guid: 8573c0a256968ae4a85c76c7374a6cd0,
+  finishParticles: {fileID: 8659536387359137976, guid: 8e758e3a6b9373744856120e4df0f9ed,
     type: 3}
   sceneFader: {fileID: 738895840}
 --- !u!65 &1614700593
@@ -3130,7 +3131,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635512873}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3272,7 +3273,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692465535}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3469,7 +3470,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716640869}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

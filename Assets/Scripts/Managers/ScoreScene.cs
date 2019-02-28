@@ -19,7 +19,7 @@ public class ScoreScene : MonoBehaviour
 
     private void Start()
     {
-        roundsPlayed.text = "Rounds Played: " + GameStats.RoundsPlayed;
+        roundsPlayed.text = "Matches played: " + GameStats.RoundsPlayed;
         GameStats.RoundsPlayed++;
     }
 

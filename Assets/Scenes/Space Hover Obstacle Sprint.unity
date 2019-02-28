@@ -124,11 +124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2 Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 5382436640788014697, guid: f6cf8cc1c948ad14393288b41096f72b,
-        type: 3}
-      propertyPath: respawn
-      value: Respawn_P2
-      objectReference: {fileID: 0}
     - target: {fileID: 5382436640788014703, guid: f6cf8cc1c948ad14393288b41096f72b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -183,6 +178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382436640788014697, guid: f6cf8cc1c948ad14393288b41096f72b,
+        type: 3}
+      propertyPath: respawn
+      value: Respawn_P2
       objectReference: {fileID: 0}
     - target: {fileID: 5382436642201540288, guid: f6cf8cc1c948ad14393288b41096f72b,
         type: 3}
@@ -996,15 +996,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3630331872440051342, guid: b11646bcb66852a4e840d6a0b1b3d12d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7054379105217255203, guid: b11646bcb66852a4e840d6a0b1b3d12d,
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630331872440051342, guid: b11646bcb66852a4e840d6a0b1b3d12d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7054379105217155460, guid: b11646bcb66852a4e840d6a0b1b3d12d,
         type: 3}
@@ -1229,7 +1229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.43045902, y: -0.5609858, z: 0.43045938, w: 0.56098545}
-  m_LocalPosition: {x: 179.3, y: 45.7, z: 33.7}
+  m_LocalPosition: {x: 141.1, y: 179.5, z: 104.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1567,6 +1567,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5076039310250225229, guid: 31055be97e8f2254c8d67a3b89e82a7a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5076039310250225226, guid: 31055be97e8f2254c8d67a3b89e82a7a,
         type: 3}
       propertyPath: speed
@@ -1591,11 +1596,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5076039310250225229, guid: 31055be97e8f2254c8d67a3b89e82a7a,
-        type: 3}
-      propertyPath: m_Mass
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5076039308971695843, guid: 31055be97e8f2254c8d67a3b89e82a7a,
         type: 3}

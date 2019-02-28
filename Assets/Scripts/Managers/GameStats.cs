@@ -6,6 +6,48 @@ public static class GameStats
 {
     private static int player1Score, player2Score, player3Score, player4Score, previousLevel, previousPreviousLevel;
     private static bool player1 = false, player2 = false, player3 = false, player4 = false;
+    private static List<int> levelList;
+    private static int levelPointer = 0;
+    private static int roundsPlayed = 0;
+
+    // get & set rounds played
+    public static int RoundsPlayed
+    {
+        get
+        {
+            return roundsPlayed;
+        }
+        set
+        {
+            roundsPlayed = value;
+        }
+    }
+
+    // get & set level pointer
+    public static int LevelPointer
+    {
+        get
+        {
+            return levelPointer;
+        }
+        set
+        {
+            levelPointer = value;
+        }
+    }
+
+    // get & set levels
+    public static List<int> LevelList
+    {
+        get
+        {
+            return levelList;
+        }
+        set
+        {
+            levelList = value;
+        }
+    }
 
     // get & set players joined
     public static bool Player1

@@ -2413,13 +2413,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.43045902, y: -0.5609858, z: 0.43045938, w: 0.56098545}
-  m_LocalPosition: {x: 179.3, y: 45.7, z: 33.7}
+  m_LocalRotation: {x: 0.4304605, y: 0.5609838, z: -0.4304579, w: 0.5609875}
+  m_LocalPosition: {x: 143.94, y: 141.8, z: -11.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 75, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 75, y: 90.00001, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3953,16 +3953,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2 Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 5382436640788014697, guid: f6cf8cc1c948ad14393288b41096f72b,
-        type: 3}
-      propertyPath: hoverHeight
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5382436640788014697, guid: f6cf8cc1c948ad14393288b41096f72b,
-        type: 3}
-      propertyPath: speed
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 5382436640788014703, guid: f6cf8cc1c948ad14393288b41096f72b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4032,6 +4022,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382436640788014697, guid: f6cf8cc1c948ad14393288b41096f72b,
+        type: 3}
+      propertyPath: hoverHeight
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382436640788014697, guid: f6cf8cc1c948ad14393288b41096f72b,
+        type: 3}
+      propertyPath: speed
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6cf8cc1c948ad14393288b41096f72b, type: 3}

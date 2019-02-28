@@ -21,19 +21,23 @@ public class MainMenu : MonoBehaviour
 
     public void RandomLevel()
     {
-        //sceneFader.FadeTo(32);
+        //sceneFader.FadeTo(31);
         //int index = Random.Range(16, 21);
 
-        int index = Random.Range(2, 33);
-        if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
-        {
-            RandomLevel();
-        }
-        else
-        {
-            GameStats.PreviousPreviousLevel = GameStats.PreviousLevel;
-            GameStats.PreviousLevel = index;
-            sceneFader.FadeTo(index);
-        }
+        //int index = Random.Range(2, 33);
+        //if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
+        //{
+        //    RandomLevel();
+        //}
+        //else
+        //{
+        //    GameStats.PreviousPreviousLevel = GameStats.PreviousLevel;
+        //    GameStats.PreviousLevel = index;
+        //    sceneFader.FadeTo(index);
+        //}
+
+        
+        sceneFader.FadeTo(GameStats.LevelList[GameStats.LevelPointer]);
+        GameStats.LevelPointer++;
     }
 }

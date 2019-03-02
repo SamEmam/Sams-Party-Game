@@ -34,6 +34,7 @@ public class FinishLine : MonoBehaviour
                 {
                     ps.laps++;
                     rc.checkpointCount = 0;
+                    rc.checkpointNum = 0;
                     return;
                 }
 

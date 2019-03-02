@@ -2334,8 +2334,8 @@ Camera:
   m_GameObject: {fileID: 77545746}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.85882354, g: 0.32156864, b: 0.21176471, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -6310,7 +6310,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209724658}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc495980e90cfec4d9a1192338bfb19a, type: 3}
   m_Name: 
@@ -46940,6 +46940,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1399074832}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1399268826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399268828}
+  - component: {fileID: 1399268827}
+  m_Layer: 0
+  m_Name: PauseBeforeStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1399268827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399268826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9579df49b725ed64fb5bc90e4e467878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter123: {fileID: 735997068}
+  resumeIn3Seconds: 1
+--- !u!4 &1399268828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399268826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1404161665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60001,6 +60046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4f197abe1379549ba9bc130b204c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointNum: 0
 --- !u!65 &1794976387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72112,6 +72158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawn: Respawn_P2
   checkpointCount: 0
+  checkpointNum: 0
   respawnPoint: {fileID: 0}
   controller: 2
 --- !u!4 &348479531833691007 stripped
@@ -72146,6 +72193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawn: Respawn_P3
   checkpointCount: 0
+  checkpointNum: 0
   respawnPoint: {fileID: 0}
   controller: 3
 --- !u!1001 &2562888796215732410
@@ -72354,6 +72402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawn: Respawn_P1
   checkpointCount: 0
+  checkpointNum: 0
   respawnPoint: {fileID: 0}
   controller: 1
 --- !u!1001 &3455672717828001081
@@ -72482,6 +72531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawn: Respawn_P4
   checkpointCount: 0
+  checkpointNum: 0
   respawnPoint: {fileID: 0}
   controller: 4
 --- !u!1001 &6094224870868622882

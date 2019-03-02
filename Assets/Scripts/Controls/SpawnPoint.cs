@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
+
+    public int checkpointNum;
+
     private void Awake()
     {
         GetComponent<BoxCollider>().isTrigger = true;
@@ -21,8 +24,20 @@ public class SpawnPoint : MonoBehaviour
                 return;
             }
 
-            rc.respawnPoint = transform;
-            rc.checkpointCount++;
+            
+
+            
+            if (rc.checkpointNum == checkpointNum - 1)
+            {
+                rc.checkpointCount++;
+                rc.checkpointNum = checkpointNum;
+                rc.respawnPoint = transform;
+            }
+            else if (rc.checkpointNum == checkpointNum)
+            {
+                rc.checkpointNum = checkpointNum;
+                rc.respawnPoint = transform;
+            }
         }
     }
 }

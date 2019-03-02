@@ -8,6 +8,7 @@ public class RespawnComponent : MonoBehaviour
     public string respawn = "Respawn_P1";
     private Rigidbody rb;
     public int checkpointCount;
+    public int checkpointNum;
 
     public Transform respawnPoint;
 

@@ -1979,6 +1979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4f197abe1379549ba9bc130b204c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointNum: 0
 --- !u!65 &191501203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8258,6 +8259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4f197abe1379549ba9bc130b204c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointNum: 0
 --- !u!65 &332153242
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8457,10 +8459,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1378451754}
     m_Modifications:
-    - target: {fileID: 181740, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 466822, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -221.5
@@ -8491,6 +8489,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 466822, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181740, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8671,10 +8673,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1378451754}
     m_Modifications:
-    - target: {fileID: 181740, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 466822, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -181.5
@@ -8706,6 +8704,10 @@ PrefabInstance:
     - target: {fileID: 466822, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 181740, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
@@ -12773,6 +12775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4f197abe1379549ba9bc130b204c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointNum: 0
 --- !u!65 &1039351862
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12912,10 +12915,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1378451754}
     m_Modifications:
-    - target: {fileID: 181740, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 466822, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -141.5
@@ -12947,6 +12946,10 @@ PrefabInstance:
     - target: {fileID: 466822, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 181740, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a80cd43b3b1aff04f9a9fbb3edf9da16, type: 3}
@@ -17133,7 +17136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 718193767}
   controller: 0
-  scenesInBuild: 32
+  scenesInBuild: 31
   tempList: 
 --- !u!4 &1686176257
 Transform:
@@ -19948,6 +19951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4f197abe1379549ba9bc130b204c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointNum: 0
 --- !u!65 &2059470901
 BoxCollider:
   m_ObjectHideFlags: 0

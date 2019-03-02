@@ -10,7 +10,7 @@ public class SHSpawner : MonoBehaviour
 
     public SHColorLoop SHcolor;
 
-    private float nextTimeToSpawn = 2f;
+    private float nextTimeToSpawn = 6f;
     
 
     // Start is called before the first frame update

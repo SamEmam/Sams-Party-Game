@@ -39,7 +39,7 @@ public class FinishLine : MonoBehaviour
                 }
 
                 ps.score += rewardScore;
-                ps.UpdateScore();
+                //ps.UpdateScore();
                 rewardScore--;
 
                 Instantiate(ps.finishParticles, other.gameObject.transform.position, other.gameObject.transform.rotation);

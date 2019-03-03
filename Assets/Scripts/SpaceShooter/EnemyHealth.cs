@@ -31,7 +31,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         PlayerScore ps = GetComponent<PlayerScore>();
         ps.score -= bm.playersLeft - 1;
-        ps.UpdateScore();
+        //ps.UpdateScore();
         bm.playersLeft--;
         Destroy(this.gameObject);
         Instantiate(ps.finishParticles, transform.position, Quaternion.LookRotation(Vector3.up));

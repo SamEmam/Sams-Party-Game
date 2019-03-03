@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DestroyerScript : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class DestroyerScript : MonoBehaviour
 
     public SceneFader sceneFader;
 
+    public DestroyerScript otherDestroyer;
+    public Text message;
+
     public GameObject player1;
     public GameObject player2;
     public GameObject player3;
@@ -20,6 +24,7 @@ public class DestroyerScript : MonoBehaviour
     private PlayerScore p2Score;
     private PlayerScore p3Score;
     private PlayerScore p4Score;
+    private bool hasUpdatedScore;
 
     private void Awake()
     {
@@ -34,6 +39,7 @@ public class DestroyerScript : MonoBehaviour
         {
             player1.SetActive(true);
             p1Score = player1.GetComponent<PlayerScore>();
+            p1Score.PlayerColor();
             //p1Score.score = reward;
             playersLeft++;
         }
@@ -41,6 +47,7 @@ public class DestroyerScript : MonoBehaviour
         {
             player2.SetActive(true);
             p2Score = player2.GetComponent<PlayerScore>();
+            p2Score.PlayerColor();
             //p2Score.score = reward;
             playersLeft++;
         }
@@ -48,6 +55,7 @@ public class DestroyerScript : MonoBehaviour
         {
             player3.SetActive(true);
             p3Score = player3.GetComponent<PlayerScore>();
+            p3Score.PlayerColor();
             //p3Score.score = reward;
             playersLeft++;
         }
@@ -55,6 +63,7 @@ public class DestroyerScript : MonoBehaviour
         {
             player4.SetActive(true);
             p4Score = player4.GetComponent<PlayerScore>();
+            p4Score.PlayerColor();
             //p4Score.score = reward;
             playersLeft++;
         }
@@ -81,13 +90,17 @@ public class DestroyerScript : MonoBehaviour
 
     private void Update()
     {
-        if (playersLeft <= 1)
+        if (playersLeft <= 1 && !hasUpdatedScore)
         {
+            hasUpdatedScore = true;
+            otherDestroyer.hasUpdatedScore = true;
+            message.text = "";
+            message.enabled = true;
+            if (GameStats.Player1) { message.text += p1Score.playerColorText + ": " + p1Score.score + " points\n"; p1Score.UpdateScore(); }
+            if (GameStats.Player2) { message.text += p2Score.playerColorText + ": " + p2Score.score + " points\n"; p2Score.UpdateScore(); }
+            if (GameStats.Player3) { message.text += p3Score.playerColorText + ": " + p3Score.score + " points\n"; p3Score.UpdateScore(); }
+            if (GameStats.Player4) { message.text += p4Score.playerColorText + ": " + p4Score.score + " points\n"; p4Score.UpdateScore(); }
 
-            if (GameStats.Player1) { p1Score.UpdateScore(); }
-            if (GameStats.Player2) { p2Score.UpdateScore(); }
-            if (GameStats.Player3) { p3Score.UpdateScore(); }
-            if (GameStats.Player4) { p4Score.UpdateScore(); }
 
             StartCoroutine(EndScene());
         }
@@ -109,8 +122,9 @@ public class DestroyerScript : MonoBehaviour
         {
             PlayerScore ps = other.GetComponent<PlayerScore>();
             ps.score -= playersLeft - 1;
-            ps.UpdateScore();
+            //ps.UpdateScore();
             playersLeft--;
+            otherDestroyer.playersLeft--;
             Destroy(other.gameObject);
             Instantiate(ps.finishParticles, other.transform.position, Quaternion.LookRotation(Vector3.up));
         }

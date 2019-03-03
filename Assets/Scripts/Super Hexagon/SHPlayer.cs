@@ -33,7 +33,7 @@ public class SHPlayer : MonoBehaviour
 
         PlayerScore ps = GetComponent<PlayerScore>();
         ps.score -= bm.playersLeft - 1;
-        ps.UpdateScore();
+        //ps.UpdateScore();
         bm.playersLeft--;
         Destroy(this.gameObject);
     }

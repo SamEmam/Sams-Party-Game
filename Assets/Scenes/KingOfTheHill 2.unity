@@ -815,7 +815,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907477298}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc495980e90cfec4d9a1192338bfb19a, type: 3}
   m_Name: 
@@ -1018,6 +1018,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: da0995cff262a8a4abe5089d20bb9bae,
     type: 3}
+  playerColorText: 
 --- !u!65 &911907166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1147,6 +1148,7 @@ MonoBehaviour:
   reward: 3
   fireworks: {fileID: 19800002, guid: 180149b1a35449044a27b451e816d2de, type: 3}
   particlePos: {x: 0, y: 30, z: 0}
+  message: {fileID: 2025441390}
   sceneFader: {fileID: 213206777}
   player1: {fileID: 911907164}
   player2: {fileID: 27134613}
@@ -2252,7 +2254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DODGE
+  m_Text: 
 --- !u!114 &2025441391
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ public class DTBPlayer : MonoBehaviour
             }
             isRewarded = true;
             ps.score -= bm.playersLeft - 1;
-            ps.UpdateScore();
+            //ps.UpdateScore();
             bm.playersLeft--;
             rb.constraints = RigidbodyConstraints.None;
             rb.useGravity = true;

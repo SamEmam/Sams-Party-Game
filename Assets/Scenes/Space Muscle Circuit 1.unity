@@ -8597,6 +8597,11 @@ PrefabInstance:
       propertyPath: finishLine
       value: 
       objectReference: {fileID: 443049561}
+    - target: {fileID: 2927189651802620390, guid: 886af00af305c1d4ba95d27f04e4c00c,
+        type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 184303723}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 886af00af305c1d4ba95d27f04e4c00c, type: 3}
 --- !u!1001 &3116430035479122230
@@ -9426,6 +9431,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: da0995cff262a8a4abe5089d20bb9bae,
     type: 3}
+  playerColorText: 
 --- !u!65 &8361719241895403348
 BoxCollider:
   m_ObjectHideFlags: 0

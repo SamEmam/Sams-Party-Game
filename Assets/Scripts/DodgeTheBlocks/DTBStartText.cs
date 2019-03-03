@@ -11,6 +11,7 @@ public class DTBStartText : MonoBehaviour
     public float destroyTime = 3f;
     private int i = 0;
     private float countdown;
+    private bool hasStopped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +23,22 @@ public class DTBStartText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hasStopped)
+        {
+            return;
+        }
         countdown -= Time.deltaTime;
         if (countdown <= 0 && i < message.Length)
         {
-            text.text = message[i];
             i++;
+            text.text = message[i];
             countdown = messageTime;
         }
 
         if (i == message.Length)
         {
-            Destroy(this.gameObject, destroyTime);
+            text.text = "";
+            hasStopped = true;
         }
     }
 }

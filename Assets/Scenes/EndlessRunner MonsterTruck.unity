@@ -27952,7 +27952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843663031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000061035156, y: -100.000015, z: 400}
+  m_LocalPosition: {x: -0.000061035156, y: -50, z: 400}
   m_LocalScale: {x: 500.00037, y: 50, z: 1000.0005}
   m_Children: []
   m_Father: {fileID: 533561448}
@@ -27987,6 +27987,8 @@ MonoBehaviour:
   deathEffect: {fileID: 8659536387359137976, guid: 8573c0a256968ae4a85c76c7374a6cd0,
     type: 3}
   sceneFader: {fileID: 213206777}
+  otherDestroyer: {fileID: 1024593725}
+  message: {fileID: 1907373117}
   player1: {fileID: 3100458883214202729}
   player2: {fileID: 7156788730033769274}
   player3: {fileID: 5436275542258497842}
@@ -34429,6 +34431,8 @@ MonoBehaviour:
   deathEffect: {fileID: 8659536387359137976, guid: 8573c0a256968ae4a85c76c7374a6cd0,
     type: 3}
   sceneFader: {fileID: 213206777}
+  otherDestroyer: {fileID: 843663034}
+  message: {fileID: 1907373117}
   player1: {fileID: 3100458883214202729}
   player2: {fileID: 7156788730033769274}
   player3: {fileID: 5436275542258497842}
@@ -72302,6 +72306,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6756967993453256166, guid: b70054fb5b504de4e800dc0aaba5c315,
         type: 3}
+    - target: {fileID: 2600582357160890701, guid: 87ed611b2ffa31a49a2aa176a76221ae,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600582357160890701, guid: 87ed611b2ffa31a49a2aa176a76221ae,
+        type: 3}
+      propertyPath: m_Downforce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600582357160890701, guid: 87ed611b2ffa31a49a2aa176a76221ae,
+        type: 3}
+      propertyPath: m_Topspeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600582357160890701, guid: 87ed611b2ffa31a49a2aa176a76221ae,
+        type: 3}
+      propertyPath: m_TractionControl
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87ed611b2ffa31a49a2aa176a76221ae, type: 3}
 --- !u!1 &2600582356989439031 stripped
@@ -72406,6 +72430,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6756967993453256166, guid: 8573c0a256968ae4a85c76c7374a6cd0,
         type: 3}
+    - target: {fileID: 5436275542196497145, guid: 0100a4bbff348c746a3b60a962d2d22b,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436275542196497145, guid: 0100a4bbff348c746a3b60a962d2d22b,
+        type: 3}
+      propertyPath: m_Downforce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436275542196497145, guid: 0100a4bbff348c746a3b60a962d2d22b,
+        type: 3}
+      propertyPath: m_Topspeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436275542196497145, guid: 0100a4bbff348c746a3b60a962d2d22b,
+        type: 3}
+      propertyPath: m_TractionControl
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0100a4bbff348c746a3b60a962d2d22b, type: 3}
 --- !u!1 &5436275542258497842 stripped
@@ -72572,6 +72616,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6756967993453256166, guid: da0995cff262a8a4abe5089d20bb9bae,
         type: 3}
+    - target: {fileID: 8577172632441459050, guid: 106a32293143a5f4589bc525b3f10fc2,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577172632441459050, guid: 106a32293143a5f4589bc525b3f10fc2,
+        type: 3}
+      propertyPath: m_Downforce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577172632441459050, guid: 106a32293143a5f4589bc525b3f10fc2,
+        type: 3}
+      propertyPath: m_Topspeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577172632441459050, guid: 106a32293143a5f4589bc525b3f10fc2,
+        type: 3}
+      propertyPath: m_TractionControl
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106a32293143a5f4589bc525b3f10fc2, type: 3}
 --- !u!1001 &7156788730033769273
@@ -72652,6 +72716,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6756967993453256166, guid: 8e758e3a6b9373744856120e4df0f9ed,
         type: 3}
+    - target: {fileID: 7156788731071208032, guid: adc382c32be79a94bbeaade0840347af,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156788731071208032, guid: adc382c32be79a94bbeaade0840347af,
+        type: 3}
+      propertyPath: m_Downforce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156788731071208032, guid: adc382c32be79a94bbeaade0840347af,
+        type: 3}
+      propertyPath: m_Topspeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156788731071208032, guid: adc382c32be79a94bbeaade0840347af,
+        type: 3}
+      propertyPath: m_TractionControl
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adc382c32be79a94bbeaade0840347af, type: 3}
 --- !u!1 &7156788730033769274 stripped

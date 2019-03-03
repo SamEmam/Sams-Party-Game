@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KOTHManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class KOTHManager : MonoBehaviour
     public ParticleSystem fireworks;
     public Vector3 particlePos = new Vector3(0, 30, 0);
     private bool fireworksLaunched = false;
+
+    public Text message;
 
     public SceneFader sceneFader;
 
@@ -37,6 +40,7 @@ public class KOTHManager : MonoBehaviour
         {
             player1.SetActive(true);
             p1Score = player1.GetComponent<PlayerScore>();
+            p1Score.PlayerColor();
             //p1Score.score = reward;
             playersLeft++;
         }
@@ -44,6 +48,7 @@ public class KOTHManager : MonoBehaviour
         {
             player2.SetActive(true);
             p2Score = player2.GetComponent<PlayerScore>();
+            p2Score.PlayerColor();
             //p2Score.score = reward;
             playersLeft++;
         }
@@ -51,6 +56,7 @@ public class KOTHManager : MonoBehaviour
         {
             player3.SetActive(true);
             p3Score = player3.GetComponent<PlayerScore>();
+            p3Score.PlayerColor();
             //p3Score.score = reward;
             playersLeft++;
         }
@@ -58,11 +64,12 @@ public class KOTHManager : MonoBehaviour
         {
             player4.SetActive(true);
             p4Score = player4.GetComponent<PlayerScore>();
+            p4Score.PlayerColor();
             //p4Score.score = reward;
             playersLeft++;
         }
 
-        reward = playersLeft;           // set reward equal to players in game
+        reward = playersLeft -1;           // set reward equal to players in game
 
         if (GameStats.Player1)
         {
@@ -90,11 +97,13 @@ public class KOTHManager : MonoBehaviour
             {
                 Instantiate(fireworks, particlePos, Quaternion.LookRotation(Vector3.up));
                 fireworksLaunched = true;
+                if (GameStats.Player1) { message.text += p1Score.playerColorText + ": " + p1Score.score + " points\n"; p1Score.UpdateScore(); }
+                if (GameStats.Player2) { message.text += p2Score.playerColorText + ": " + p2Score.score + " points\n"; p2Score.UpdateScore(); }
+                if (GameStats.Player3) { message.text += p3Score.playerColorText + ": " + p3Score.score + " points\n"; p3Score.UpdateScore(); }
+                if (GameStats.Player4) { message.text += p4Score.playerColorText + ": " + p4Score.score + " points\n"; p4Score.UpdateScore(); }
             }
-            if (GameStats.Player1) { p1Score.UpdateScore(); }
-            if (GameStats.Player2) { p2Score.UpdateScore(); }
-            if (GameStats.Player3) { p3Score.UpdateScore(); }
-            if (GameStats.Player4) { p4Score.UpdateScore(); }
+
+            
 
             StartCoroutine(EndScene());
         }
@@ -102,7 +111,7 @@ public class KOTHManager : MonoBehaviour
 
     IEnumerator EndScene()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         if (!GameStats.Player1 && !GameStats.Player2 && !GameStats.Player3 && !GameStats.Player4)
         {
             sceneFader.FadeTo("MainMenu");
@@ -115,8 +124,8 @@ public class KOTHManager : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             PlayerScore ps = other.GetComponent<PlayerScore>();
-            ps.score -= playersLeft;
-            ps.UpdateScore();
+            ps.score -= playersLeft -1;
+            //ps.UpdateScore();
             playersLeft--;
             Instantiate(ps.finishParticles, other.transform.position, Quaternion.LookRotation(Vector3.up));
             Destroy(other.gameObject);

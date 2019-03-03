@@ -316,6 +316,7 @@ MonoBehaviour:
   score: 0
   laps: 0
   finishParticles: {fileID: 0}
+  playerColorText: 
 --- !u!114 &80263957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1373,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardScore: 0
-  bestOutOf: 2
+  bestOutOf: 1
   playersLeft: 0
   t1p1: {fileID: 80263955}
   t1p1Pos: {x: 0, y: 0, z: 0}
@@ -3571,7 +3572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardScore: 0
-  bestOutOf: 2
+  bestOutOf: 1
   playersLeft: 0
   t1p1: {fileID: 80263955}
   t1p1Pos: {x: 0, y: 0, z: 0}

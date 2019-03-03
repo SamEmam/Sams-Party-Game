@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BSPlayerManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class BSPlayerManager : MonoBehaviour
     private Dictionary<string, PlayerScore> playerStringMap = new Dictionary<string, PlayerScore>();
     private bool hasAwardedScore = false;
 
+    public Text message;
+
     private void Awake()
     {
 
@@ -43,6 +46,7 @@ public class BSPlayerManager : MonoBehaviour
         {
             player1.SetActive(true);
             p1Score = player1.GetComponent<PlayerScore>();
+            p1Score.PlayerColor();
             playersLeft++;
             playerStringMap.Add("p1Score", p1Score);
         }
@@ -50,6 +54,7 @@ public class BSPlayerManager : MonoBehaviour
         {
             player2.SetActive(true);
             p2Score = player2.GetComponent<PlayerScore>();
+            p2Score.PlayerColor();
             playersLeft++;
             playerStringMap.Add("p2Score", p2Score);
         }
@@ -57,6 +62,7 @@ public class BSPlayerManager : MonoBehaviour
         {
             player3.SetActive(true);
             p3Score = player3.GetComponent<PlayerScore>();
+            p3Score.PlayerColor();
             playersLeft++;
             playerStringMap.Add("p3Score", p3Score);
         }
@@ -64,6 +70,7 @@ public class BSPlayerManager : MonoBehaviour
         {
             player4.SetActive(true);
             p4Score = player4.GetComponent<PlayerScore>();
+            p4Score.PlayerColor();
             playersLeft++;
             playerStringMap.Add("p4Score", p4Score);
         }
@@ -104,11 +111,11 @@ public class BSPlayerManager : MonoBehaviour
                 UpdatePlayerScore(playerStringMap[mySortedList[i].Key]);
             }
             
+            //if (GameStats.Player1) { p1Score.UpdateScore(); }
+            //if (GameStats.Player2) { p2Score.UpdateScore(); }
+            //if (GameStats.Player3) { p3Score.UpdateScore(); }
+            //if (GameStats.Player4) { p4Score.UpdateScore(); }
 
-            if (GameStats.Player1) { p1Score.UpdateScore(); }
-            if (GameStats.Player2) { p2Score.UpdateScore(); }
-            if (GameStats.Player3) { p3Score.UpdateScore(); }
-            if (GameStats.Player4) { p4Score.UpdateScore(); }
 
             StartCoroutine(EndScene());
         }
@@ -118,16 +125,15 @@ public class BSPlayerManager : MonoBehaviour
 
     void UpdatePlayerScore(PlayerScore ps)
     {
-        Debug.Log(ps + " : " + ps.score);
         ps.score -= reward;
-        Debug.Log(ps + " : " + ps.score);
+        message.text += ps.playerColorText + ": " + ps.score + " points\n";
         ps.UpdateScore();
         reward--;
     }
 
     IEnumerator EndScene()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         if (!GameStats.Player1 && !GameStats.Player2 && !GameStats.Player3 && !GameStats.Player4)
         {
             sceneFader.FadeTo("MainMenu");

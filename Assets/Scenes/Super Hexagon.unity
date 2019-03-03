@@ -260,6 +260,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &623195742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623195744}
+  - component: {fileID: 623195743}
+  m_Layer: 0
+  m_Name: PauseBeforeStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &623195743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623195742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9579df49b725ed64fb5bc90e4e467878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter123: {fileID: 1263077242}
+  resumeIn3Seconds: 1
+--- !u!4 &623195744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623195742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730265137
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +458,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: da0995cff262a8a4abe5089d20bb9bae,
     type: 3}
+  playerColorText: 
 --- !u!1 &891069459
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +644,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918336921}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc495980e90cfec4d9a1192338bfb19a, type: 3}
   m_Name: 
@@ -854,7 +900,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BLOCK
+  m_Text: 
 --- !u!114 &1263077243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,10 +938,10 @@ RectTransform:
   m_Father: {fileID: 918336926}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1, y: 0.1}
-  m_AnchorMax: {x: 0.9, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 128}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: 574, y: 324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1287421839
 GameObject:
@@ -1050,6 +1096,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: 8573c0a256968ae4a85c76c7374a6cd0,
     type: 3}
+  playerColorText: 
 --- !u!1001 &1309014632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1362,6 +1409,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: 8e758e3a6b9373744856120e4df0f9ed,
     type: 3}
+  playerColorText: 
 --- !u!1 &1631836646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1631836647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,6 +1443,7 @@ MonoBehaviour:
   deathEffect: {fileID: 8659536387359137976, guid: 8573c0a256968ae4a85c76c7374a6cd0,
     type: 3}
   sceneFader: {fileID: 1782062731}
+  message: {fileID: 1263077242}
   player1: {fileID: 730265137}
   player2: {fileID: 1494699450}
   player3: {fileID: 1287421839}
@@ -1510,15 +1559,6 @@ MonoBehaviour:
       value: 0
       inSlope: 2
       outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -1679,6 +1719,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: b70054fb5b504de4e800dc0aaba5c315,
     type: 3}
+  playerColorText: 
 --- !u!1 &2069340461
 GameObject:
   m_ObjectHideFlags: 0

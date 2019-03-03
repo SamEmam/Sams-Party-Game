@@ -28109,7 +28109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843663031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000061035156, y: -100.000015, z: 400}
+  m_LocalPosition: {x: -0.000061035156, y: -50, z: 400}
   m_LocalScale: {x: 500.00037, y: 50, z: 1000.0005}
   m_Children: []
   m_Father: {fileID: 533561448}
@@ -28144,6 +28144,8 @@ MonoBehaviour:
   deathEffect: {fileID: 8659536387359137976, guid: 8573c0a256968ae4a85c76c7374a6cd0,
     type: 3}
   sceneFader: {fileID: 213206777}
+  otherDestroyer: {fileID: 1024593725}
+  message: {fileID: 735997068}
   player1: {fileID: 3100458883214202729}
   player2: {fileID: 348479531833690999}
   player3: {fileID: 860335265583963906}
@@ -34586,6 +34588,8 @@ MonoBehaviour:
   deathEffect: {fileID: 8659536387359137976, guid: 8573c0a256968ae4a85c76c7374a6cd0,
     type: 3}
   sceneFader: {fileID: 213206777}
+  otherDestroyer: {fileID: 843663034}
+  message: {fileID: 735997068}
   player1: {fileID: 3100458883214202729}
   player2: {fileID: 348479531833690999}
   player3: {fileID: 860335265583963906}

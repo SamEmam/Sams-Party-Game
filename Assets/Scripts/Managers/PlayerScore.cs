@@ -8,6 +8,7 @@ public class PlayerScore : MonoBehaviour
     public int score = 0;
     public int laps = 0;
     public GameObject finishParticles;
+    public string playerColorText;
 
     private void Awake()
     {
@@ -29,6 +30,27 @@ public class PlayerScore : MonoBehaviour
                 break;
             case 4:
                 score = GameStats.Player4Score;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void PlayerColor()
+    {
+        switch (playerNum)
+        {
+            case 1:
+                playerColorText =  "<color=#" + ColorUtility.ToHtmlStringRGB(Color.red) + ">PLAYER " + playerNum + "</color>";
+                break;
+            case 2:
+                playerColorText = "<color=#" + ColorUtility.ToHtmlStringRGB(Color.blue) + ">PLAYER " + playerNum + "</color>";
+                break;
+            case 3:
+                playerColorText = "<color=#" + ColorUtility.ToHtmlStringRGB(Color.green) + ">PLAYER " + playerNum + "</color>";
+                break;
+            case 4:
+                playerColorText = "<color=#" + ColorUtility.ToHtmlStringRGB(Color.yellow) + ">PLAYER " + playerNum + "</color>";
                 break;
             default:
                 break;

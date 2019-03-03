@@ -10151,8 +10151,8 @@ Transform:
   - {fileID: 1505209164}
   - {fileID: 316123250}
   - {fileID: 1599801991}
-  - {fileID: 1859985486}
   - {fileID: 1796709502}
+  - {fileID: 1859985486}
   - {fileID: 877194628}
   - {fileID: 1704060940}
   - {fileID: 1827584642}
@@ -17154,7 +17154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1036095906}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1796709503
 MonoBehaviour:
@@ -18191,7 +18191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1036095906}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1859985487
 MonoBehaviour:
@@ -20801,6 +20801,11 @@ PrefabInstance:
       propertyPath: finishLine
       value: 
       objectReference: {fileID: 443049561}
+    - target: {fileID: 2927189651802620390, guid: 886af00af305c1d4ba95d27f04e4c00c,
+        type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 793240069}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 886af00af305c1d4ba95d27f04e4c00c, type: 3}
 --- !u!1001 &3025994239923902362
@@ -20909,7 +20914,7 @@ PrefabInstance:
     - target: {fileID: 3942101707177831857, guid: b2e835821b7183a4fb8864be333f2a39,
         type: 3}
       propertyPath: raceCheckpoints
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3942101707177831856, guid: b2e835821b7183a4fb8864be333f2a39,
         type: 3}

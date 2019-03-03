@@ -43,7 +43,7 @@ public class CFSnake : MonoBehaviour
             //GameObject.FindObjectOfType<CFGameManager>().EndGame();
             isDead = true;
             ps.score -= bm.playersLeft - 1;
-            ps.UpdateScore();
+            //ps.UpdateScore();
             bm.playersLeft--;
         }
     }

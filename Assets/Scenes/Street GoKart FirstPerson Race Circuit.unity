@@ -22622,6 +22622,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: 8e758e3a6b9373744856120e4df0f9ed,
     type: 3}
+  playerColorText: 
 --- !u!65 &1199042452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36164,6 +36165,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: b70054fb5b504de4e800dc0aaba5c315,
     type: 3}
+  playerColorText: 
 --- !u!65 &1764503712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43849,6 +43851,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: 8573c0a256968ae4a85c76c7374a6cd0,
     type: 3}
+  playerColorText: 
 --- !u!65 &1949390360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52885,6 +52888,11 @@ PrefabInstance:
       propertyPath: finishLine
       value: 
       objectReference: {fileID: 443049561}
+    - target: {fileID: 2927189651802620390, guid: 886af00af305c1d4ba95d27f04e4c00c,
+        type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 1037309685}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 886af00af305c1d4ba95d27f04e4c00c, type: 3}
 --- !u!1 &2932402710072559255
@@ -54338,6 +54346,7 @@ MonoBehaviour:
   laps: 0
   finishParticles: {fileID: 6756967993453256166, guid: da0995cff262a8a4abe5089d20bb9bae,
     type: 3}
+  playerColorText: 
 --- !u!65 &8361719241895403348
 BoxCollider:
   m_ObjectHideFlags: 0

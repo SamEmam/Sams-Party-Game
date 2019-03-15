@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using XboxCtrlrInput;
 
 public class MainMenu : MonoBehaviour
 {
@@ -25,10 +26,10 @@ public class MainMenu : MonoBehaviour
         //sceneFader.FadeTo(32);
         //return;
         //int index = Random.Range(16, 21);
-
-        if (GameStats.LevelPointer > GameStats.LevelList.Count)
+        
+        if (GameStats.LevelPointer > GameStats.LevelList.Count-1)
         {
-            int index = Random.Range(2, 33);
+            int index = Random.Range(3, 31);
             if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
             {
                 RandomLevel();
@@ -50,5 +51,42 @@ public class MainMenu : MonoBehaviour
             sceneFader.FadeTo(index);
         }
 
+        BonusLevel();
+
+    }
+
+    public void BonusLevel()
+    {
+        int random = 0;
+        switch (XCI.GetNumPluggedCtrlrs())
+        {
+            case 1:
+                break;
+            case 2:
+                if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9)
+                {
+                    random = Random.Range(0, 10);
+                }
+                break;
+            case 3:
+                if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9 && GameStats.Player3Score > 9)
+                {
+                    random = Random.Range(0, 10);
+                }
+                break;
+            case 4:
+                if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9 && GameStats.Player3Score > 9 && GameStats.Player4Score > 9)
+                {
+                    random = Random.Range(0, 10);
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (random == 1)
+        {
+            sceneFader.FadeTo(2);
+        }
     }
 }

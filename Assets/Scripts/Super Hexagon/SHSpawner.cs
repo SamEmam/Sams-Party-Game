@@ -28,6 +28,10 @@ public class SHSpawner : MonoBehaviour
             Color color = new Color(SHcolor.r/255, SHcolor.g/255, SHcolor.b/255);
             hexagon.GetComponent<LineRenderer>().startColor = color;
             hexagon.GetComponent<LineRenderer>().endColor = color;
+            //if (spawnRate < 0.6f)
+            //{
+            //    hexagon.GetComponent<SHHexagon>().shrinkSpeed = spawnRate * 5;
+            //}
             nextTimeToSpawn = Time.time + 1f / spawnRate;
         }
         spawnRate += Time.deltaTime * 0.01f;

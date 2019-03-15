@@ -14,7 +14,8 @@ public class StartGame : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 2; i <= scenesInBuild; i++)
+
+        for (int i = 3; i <= scenesInBuild; i++)
         {
             tempList.Add(i);
         }

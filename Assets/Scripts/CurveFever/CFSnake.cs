@@ -21,12 +21,14 @@ public class CFSnake : MonoBehaviour
     void Update()
     {
         horizontal = XCI.GetAxisRaw(XboxAxis.LeftStickX, controller);
+        transform.Translate(Vector2.up * speed * Time.fixedDeltaTime, Space.Self);
+        transform.Rotate(Vector3.forward * -horizontal * rotationSpeed * Time.fixedDeltaTime);
     }
 
     private void FixedUpdate()
     {
-        transform.Translate(Vector2.up * speed * Time.fixedDeltaTime, Space.Self);
-        transform.Rotate(Vector3.forward * -horizontal * rotationSpeed * Time.fixedDeltaTime);
+        //transform.Translate(Vector2.up * speed * Time.fixedDeltaTime, Space.Self);
+        //transform.Rotate(Vector3.forward * -horizontal * rotationSpeed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

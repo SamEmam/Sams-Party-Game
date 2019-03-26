@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
         
         if (GameStats.LevelPointer > GameStats.LevelList.Count-1)
         {
-            int index = Random.Range(3, 31);
+            int index = Random.Range(3, 30);
             if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
             {
                 RandomLevel();
@@ -87,6 +87,7 @@ public class MainMenu : MonoBehaviour
         if (random == 1)
         {
             sceneFader.FadeTo(2);
+            GameStats.LevelPointer--;
         }
     }
 }

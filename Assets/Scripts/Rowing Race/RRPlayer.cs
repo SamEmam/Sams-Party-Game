@@ -8,7 +8,7 @@ public class RRPlayer : MonoBehaviour
     //private bool leftRow;
     private Rigidbody rb;
     private readonly float speed = 100f;
-    private readonly float rotation = 80f;
+    private readonly float rotation = 60f;
     public float cooldown;
     public ParticleSystem waterSpray;
 
@@ -26,7 +26,7 @@ public class RRPlayer : MonoBehaviour
         if (XCI.GetAxis(XboxAxis.RightTrigger,controller) > 0.1f && cooldown > .5f)
         {
             rb.AddForce(transform.forward * speed * cooldown);
-            rb.AddRelativeTorque(-Vector3.up * rotation * cooldown);
+            rb.AddRelativeTorque(-Vector3.up * rotation);
             cooldown = 0f;
             anim.Play("LeftRow");
         }
@@ -34,7 +34,7 @@ public class RRPlayer : MonoBehaviour
         else if (XCI.GetAxis(XboxAxis.LeftTrigger,controller) > 0.1f && cooldown > .5f)
         {
             rb.AddForce(transform.forward * speed * cooldown);
-            rb.AddRelativeTorque(Vector3.up * rotation * cooldown);
+            rb.AddRelativeTorque(Vector3.up * rotation);
             cooldown = 0f;
             anim.Play("RightRow");
         }

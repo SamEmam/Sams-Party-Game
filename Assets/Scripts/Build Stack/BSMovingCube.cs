@@ -15,6 +15,7 @@ public class BSMovingCube : MonoBehaviour
     public string gameManager;
     private BSGameManager BSGM;
     public BSMoveDirection MoveDirection { get; set; }
+    public bool rngColor = true;
 
     [SerializeField]
     private float moveSpeed = 1f;
@@ -27,8 +28,10 @@ public class BSMovingCube : MonoBehaviour
         BSGM.currentCube = this.gameObject;
         //currentCube = this.gameObject;
         lastCube = BSGM.lastCube;
-        
-        GetComponent<Renderer>().material.color = GetRandomColor();
+        if (rngColor)
+        {
+            GetComponent<Renderer>().material.color = GetRandomColor();
+        }
 
         transform.localScale = new Vector3(lastCube.transform.localScale.x, transform.localScale.y, lastCube.transform.localScale.z);
         

@@ -5,7 +5,7 @@ using XboxCtrlrInput;
 public class MainMenu : MonoBehaviour
 {
 
-    public string levelToLoad = "MainScene";
+    public string levelToLoad = "MainMenu";
 
     public SceneFader sceneFader;
 
@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
         
         if (GameStats.LevelPointer > GameStats.LevelList.Count-1)
         {
-            int index = Random.Range(3, 30);
+            int index = Random.Range(3, 29);
             if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
             {
                 RandomLevel();
@@ -58,6 +58,16 @@ public class MainMenu : MonoBehaviour
     public void BonusLevel()
     {
         int random = 0;
+        int range = 10;
+        if (GameStats.HasHadBonus)
+        {
+            range = 20;
+        }
+        else
+        {
+            range = 10;
+        }
+        
         switch (XCI.GetNumPluggedCtrlrs())
         {
             case 1:
@@ -65,19 +75,19 @@ public class MainMenu : MonoBehaviour
             case 2:
                 if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9)
                 {
-                    random = Random.Range(0, 10);
+                    random = Random.Range(0, range);
                 }
                 break;
             case 3:
                 if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9 && GameStats.Player3Score > 9)
                 {
-                    random = Random.Range(0, 10);
+                    random = Random.Range(0, range);
                 }
                 break;
             case 4:
                 if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9 && GameStats.Player3Score > 9 && GameStats.Player4Score > 9)
                 {
-                    random = Random.Range(0, 10);
+                    random = Random.Range(0, range);
                 }
                 break;
             default:

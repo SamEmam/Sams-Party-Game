@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using XboxCtrlrInput;
 
 public class JoinManager : MonoBehaviour
 {
-
-    public TextMeshProUGUI P1, P2, P3, P4;
+    
 
     public XboxController controller1;
     public XboxController controller2;
@@ -19,10 +17,6 @@ public class JoinManager : MonoBehaviour
 
     private void Awake()
     {
-        P1.text = "P1: " + GameStats.Player1;
-        P2.text = "P2: " + GameStats.Player2;
-        P3.text = "P3: " + GameStats.Player3;
-        P4.text = "P4: " + GameStats.Player4;
 
         player1.SetActive(false);
         player2.SetActive(false);
@@ -84,25 +78,21 @@ public class JoinManager : MonoBehaviour
         if (XCI.GetButtonDown(XboxButton.A,controller1))
         {
             GameStats.Player1 = true;
-            P1.text = "P1: " + GameStats.Player1;
             player1.SetActive(true);
         }
         if (XCI.GetButtonDown(XboxButton.A, controller2))
         {
             GameStats.Player2 = true;
-            P2.text = "P2: " + GameStats.Player2;
             player2.SetActive(true);
         }
         if (XCI.GetButtonDown(XboxButton.A, controller3))
         {
             GameStats.Player3 = true;
-            P3.text = "P3: " + GameStats.Player3;
             player3.SetActive(true);
         }
         if (XCI.GetButtonDown(XboxButton.A, controller4))
         {
             GameStats.Player4 = true;
-            P4.text = "P4: " + GameStats.Player4;
             player4.SetActive(true);
         }
 

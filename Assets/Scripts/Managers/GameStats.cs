@@ -5,10 +5,23 @@ using UnityEngine;
 public static class GameStats
 {
     private static int player1Score, player2Score, player3Score, player4Score, previousLevel, previousPreviousLevel;
-    private static bool player1 = false, player2 = false, player3 = false, player4 = false;
+    private static bool player1 = false, player2 = false, player3 = false, player4 = false, hasHadBonus = false;
     private static List<int> levelList;
     private static int levelPointer = 0;
     private static int roundsPlayed = 0;
+
+    // get & set bonus level bool
+    public static bool HasHadBonus
+    {
+        get
+        {
+            return hasHadBonus;
+        }
+        set
+        {
+            hasHadBonus = value;
+        }
+    }
 
     // get & set rounds played
     public static int RoundsPlayed

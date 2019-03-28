@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class ScoreScene : MonoBehaviour
 {
@@ -27,6 +28,19 @@ public class ScoreScene : MonoBehaviour
     {
         if (scoreScreenCounter <= 0 && !newScene)
         {
+            if (XCI.GetNumPluggedCtrlrs() <= 0)
+            {
+                GameStats.Player1 = false;
+                GameStats.Player2 = false;
+                GameStats.Player3 = false;
+                GameStats.Player4 = false;
+            }
+            if (!GameStats.Player1 && !GameStats.Player2 && !GameStats.Player3 && !GameStats.Player4)
+            {
+                newScene = true;
+                mainMenu.Play();
+                return;
+            }
             if (GameStats.LevelPointer > GameStats.LevelList.Count)
             {
                 GameStats.LevelPointer = 0;

@@ -9,10 +9,26 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        P1Score.color = new Color32(255, 0, 0, 255);
-        P2Score.color = new Color32(0, 0, 255, 255);
-        P3Score.color = new Color32(0, 255, 0, 255);
-        P4Score.color = new Color32(255, 255, 0, 255);
+        P1Score.color = new Color32(255, 0, 0, 150);
+        P2Score.color = new Color32(0, 0, 255, 150);
+        P3Score.color = new Color32(0, 255, 0, 150);
+        P4Score.color = new Color32(255, 255, 0, 150);
+        if (!GameStats.Player1)
+        {
+            P1Score.enabled = false;
+        }
+        if (!GameStats.Player2)
+        {
+            P2Score.enabled = false;
+        }
+        if (!GameStats.Player3)
+        {
+            P3Score.enabled = false;
+        }
+        if (!GameStats.Player4)
+        {
+            P4Score.enabled = false;
+        }
     }
 
     private void LateUpdate()

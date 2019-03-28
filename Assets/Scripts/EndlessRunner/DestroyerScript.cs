@@ -9,6 +9,7 @@ public class DestroyerScript : MonoBehaviour
     private int reward = 3;
     public int playersLeft;
     public ParticleSystem deathEffect;
+    public bool canCleanup = true;
 
     public SceneFader sceneFader;
 
@@ -68,7 +69,7 @@ public class DestroyerScript : MonoBehaviour
             playersLeft++;
         }
 
-        reward = playersLeft-1;           // set reward equal to players in game
+        reward = playersLeft - 1;           // set reward equal to players in game
 
         if (GameStats.Player1)
         {
@@ -128,7 +129,7 @@ public class DestroyerScript : MonoBehaviour
             Destroy(other.gameObject);
             Instantiate(ps.finishParticles, other.transform.position, Quaternion.LookRotation(Vector3.up));
         }
-        else
+        else if (canCleanup)
         {
             Destroy(other.gameObject);
         }

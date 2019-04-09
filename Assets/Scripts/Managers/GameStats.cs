@@ -5,21 +5,35 @@ using UnityEngine;
 public static class GameStats
 {
     private static int player1Score, player2Score, player3Score, player4Score, previousLevel, previousPreviousLevel;
-    private static bool player1 = false, player2 = false, player3 = false, player4 = false, hasHadBonus = false;
+    private static bool player1 = false, player2 = false, player3 = false, player4 = false;
     private static List<int> levelList;
     private static int levelPointer = 0;
     private static int roundsPlayed = 0;
+    private static int bonusScenesPlayed = 0, levelsWithoutBonusScene = 0;
 
-    // get & set bonus level bool
-    public static bool HasHadBonus
+    // get & set levels without bonus scene
+    public static int LevelsWithoutBonusScene
     {
         get
         {
-            return hasHadBonus;
+            return levelsWithoutBonusScene;
         }
         set
         {
-            hasHadBonus = value;
+            levelsWithoutBonusScene = value;
+        }
+    }
+
+    // get & set bonus scenes played
+    public static int BonusScenesPlayed
+    {
+        get
+        {
+            return bonusScenesPlayed;
+        }
+        set
+        {
+            bonusScenesPlayed = value;
         }
     }
 

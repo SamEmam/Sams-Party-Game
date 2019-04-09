@@ -22,12 +22,12 @@ public class MainMenu : MonoBehaviour
 
     public void RandomLevel()
     {
-        
-        //sceneFader.FadeTo(32);
+
+        //sceneFader.FadeTo(9);
         //return;
         //int index = Random.Range(16, 21);
-        
-        if (GameStats.LevelPointer > GameStats.LevelList.Count-1)
+
+        if (GameStats.LevelPointer > GameStats.LevelList.Count - 1)
         {
             int index = Random.Range(3, 29);
             if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
@@ -58,15 +58,10 @@ public class MainMenu : MonoBehaviour
     public void BonusLevel()
     {
         int random = 0;
-        int range = 10;
-        if (GameStats.HasHadBonus)
-        {
-            range = 20;
-        }
-        else
-        {
-            range = 10;
-        }
+        int range = 5;
+        bool bonusSceneCanOccur = false;
+
+        
         
         switch (XCI.GetNumPluggedCtrlrs())
         {
@@ -75,29 +70,45 @@ public class MainMenu : MonoBehaviour
             case 2:
                 if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9)
                 {
-                    random = Random.Range(0, range);
+                    bonusSceneCanOccur = true;
                 }
                 break;
             case 3:
                 if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9 && GameStats.Player3Score > 9)
                 {
-                    random = Random.Range(0, range);
+                    bonusSceneCanOccur = true;
                 }
                 break;
             case 4:
                 if (GameStats.Player1Score > 9 && GameStats.Player2Score > 9 && GameStats.Player3Score > 9 && GameStats.Player4Score > 9)
                 {
-                    random = Random.Range(0, range);
+                    bonusSceneCanOccur = true;
                 }
                 break;
             default:
                 break;
         }
 
-        if (random == 1)
+        if (bonusSceneCanOccur)
         {
-            sceneFader.FadeTo(2);
-            GameStats.LevelPointer--;
+            range = (GameStats.LevelsWithoutBonusScene * 10) + 10;
+            range -= GameStats.BonusScenesPlayed * 20;
+            
+
+            random = Random.Range(0, 100);
+            
+            if (random <= range)
+            {
+                sceneFader.FadeTo(2);
+                GameStats.LevelPointer--;
+                GameStats.BonusScenesPlayed++;
+                GameStats.LevelsWithoutBonusScene = 0;
+            }
+            else
+            {
+                GameStats.LevelsWithoutBonusScene++;
+            }
+
         }
     }
 }

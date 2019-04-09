@@ -15,6 +15,7 @@ public class SoundManagerManager : MonoBehaviour
         {
             hasUpdated = true;
             SM.ignoreLevelLoad = true;
+            SM.maxMusicVolume = .4f;
             Destroy(this.gameObject);
         }
         

@@ -5188,8 +5188,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3361593999372820375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.558, y: 0.122, z: -0.376}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.011, y: 0.122, z: -2.438}
+  m_LocalScale: {x: 0.93599, y: 1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 7118054541613018050}
   m_RootOrder: 0
@@ -6447,9 +6447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96468c245ae8e0d4f8f1c7a7b8b0542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vertical: Vertical_P3
-  horizontal: Horizontal_P3
-  brake: Handbrake_P3
   controller: 3
 --- !u!114 &6936842322091064100
 MonoBehaviour:
@@ -6502,6 +6499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawn: Respawn_P3
   checkpointCount: 0
+  checkpointNum: 0
   respawnPoint: {fileID: 0}
   controller: 3
 --- !u!114 &8065172148774828921
@@ -6519,6 +6517,8 @@ MonoBehaviour:
   playerNum: 3
   score: 0
   laps: 0
+  finishParticles: {fileID: 0}
+  playerColorText: 
 --- !u!1 &8287542403207011382
 GameObject:
   m_ObjectHideFlags: 0

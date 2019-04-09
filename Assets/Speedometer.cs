@@ -13,7 +13,8 @@ public class Speedometer : MonoBehaviour
 
     private void Update()
     {
-        speed = (int)rb.velocity.magnitude;
+        var velocity = rb.velocity.magnitude * 3;
+        speed = (int)velocity;
         distanceDial.text = speed + " km/h \n " + (ps.laps + 1) + "/" + fl.raceLaps + " LAPS";
     }
 }

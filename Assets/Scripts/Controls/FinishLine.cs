@@ -43,7 +43,7 @@ public class FinishLine : MonoBehaviour
                 rewardScore--;
 
                 Instantiate(ps.finishParticles, other.gameObject.transform.position, other.gameObject.transform.rotation);
-                Destroy(other.gameObject, 1f);
+                Destroy(other.gameObject);
 
                 playersLeft--;
             }

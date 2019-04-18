@@ -37,10 +37,18 @@ public class FinishLine : MonoBehaviour
                     rc.checkpointNum = 0;
                     return;
                 }
-
+                
+                    
                 ps.score += rewardScore;
-                //ps.UpdateScore();
                 rewardScore--;
+
+                RandomAllRacePlayerScore rarPS = other.GetComponent<RandomAllRacePlayerScore>();
+                if (rarPS)
+                {
+                    rarPS.UpdatePlayerScore();
+                }
+
+
 
                 Instantiate(ps.finishParticles, other.gameObject.transform.position, other.gameObject.transform.rotation);
                 Destroy(other.gameObject);
@@ -48,5 +56,7 @@ public class FinishLine : MonoBehaviour
                 playersLeft--;
             }
         }
+
+        
     }
 }

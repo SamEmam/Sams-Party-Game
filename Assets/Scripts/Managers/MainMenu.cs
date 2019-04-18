@@ -23,8 +23,8 @@ public class MainMenu : MonoBehaviour
     public void RandomLevel()
     {
 
-        //sceneFader.FadeTo(9);
-        //return;
+        sceneFader.FadeTo(16);
+        return;
         //int index = Random.Range(16, 21);
 
         if (GameStats.LevelPointer > GameStats.LevelList.Count - 1)

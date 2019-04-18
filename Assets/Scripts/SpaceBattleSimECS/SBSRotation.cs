@@ -10,6 +10,10 @@ public class SBSRotation : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!target)
+        {
+            return;
+        }
         var pos = target.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.fixedDeltaTime);

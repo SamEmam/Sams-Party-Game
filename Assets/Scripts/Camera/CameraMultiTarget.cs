@@ -49,6 +49,7 @@ public class CameraMultiTarget : MonoBehaviour
         float halfHorizontalFovRad = Mathf.Atan(Mathf.Tan(halfVerticalFovRad) * _camera.aspect);
 
         var rotation = Quaternion.Euler(Pitch, Yaw, Roll);
+
         var inverseRotation = Quaternion.Inverse(rotation);
 
         var targetsRotatedToCameraIdentity = targets.Select(target => inverseRotation * target.transform.position).ToArray();

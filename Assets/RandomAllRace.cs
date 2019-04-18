@@ -7,11 +7,13 @@ public class RandomAllRace : MonoBehaviour
     public VehicleRandomizer vRNG;
     public PlayerScore ps;
     private int lapCounter;
+    //private int score;
     public bool updatedCar = true;
 
     private void Start()
     {
         lapCounter = vRNG.GetPlayerScore().laps;
+        //score = vRNG.GetPlayerScore().score;
         updatedCar = true;
     }
 

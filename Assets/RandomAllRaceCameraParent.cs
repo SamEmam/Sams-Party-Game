@@ -5,7 +5,6 @@ using UnityEngine;
 public class RandomAllRaceCameraParent : MonoBehaviour
 {
     public Camera cam;
-    public GameObject canvas;
     public GameObject vehicle;
     public VehicleRandomizer vRNG;
 
@@ -26,15 +25,7 @@ public class RandomAllRaceCameraParent : MonoBehaviour
             cam.transform.localPosition = new Vector3(0, 5, -8);
             cam.transform.localRotation = Quaternion.Euler(new Vector3(15, 0, 0));
 
-            if (!cam.gameObject.activeSelf == false)
-            {
-                canvas.SetActive(false);
-            }
-        }
-
-        else
-        {
-            canvas.SetActive(true);
+            
         }
     }
 }

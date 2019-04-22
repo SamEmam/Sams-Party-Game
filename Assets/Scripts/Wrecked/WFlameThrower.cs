@@ -11,11 +11,16 @@ public class WFlameThrower : MonoBehaviour
     [Header("Setup")]
     public XboxController controller;
     public ParticleSystem flame;
+    public ParticleSystem flame2;
     public Rigidbody rb;
 
     private void OnEnable()
     {
         flame.Stop();
+        if (flame2)
+        {
+            flame2.Stop();
+        }
     }
 
     private void Update()
@@ -27,6 +32,10 @@ public class WFlameThrower : MonoBehaviour
         if (XCI.GetButtonUp(XboxButton.A, controller))
         {
             flame.Stop();
+            if (flame2)
+            {
+                flame2.Stop();
+            }
         }
     }
 
@@ -34,6 +43,10 @@ public class WFlameThrower : MonoBehaviour
     void Shoot()
     {
         flame.Play();
+        if (flame2)
+        {
+            flame2.Play();
+        }
         rb.AddForce(transform.forward * speed, ForceMode.Acceleration);
     }
 }

@@ -16,6 +16,7 @@ public class WGun : MonoBehaviour
     public GameObject muzzleFlash;
     public GameObject impactEffect1;
     public GameObject impactEffect2;
+    public GameObject light;
 
 
 
@@ -24,6 +25,7 @@ public class WGun : MonoBehaviour
     private void Awake()
     {
         muzzleFlash.SetActive(false);
+        light.SetActive(false);
     }
 
     private void Update()
@@ -36,12 +38,14 @@ public class WGun : MonoBehaviour
         if (XCI.GetButtonUp(XboxButton.A, controller))
         {
             muzzleFlash.SetActive(false);
+            light.SetActive(false);
         }
     }
 
     void Shoot()
     {
         muzzleFlash.SetActive(true);
+        light.SetActive(true);
 
         RaycastHit hit;
         

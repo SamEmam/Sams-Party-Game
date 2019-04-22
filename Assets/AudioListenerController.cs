@@ -12,22 +12,22 @@ public class AudioListenerController : MonoBehaviour
     {
         Vector3 tempPos = Vector3.zero;
         float count = 0f;
-        if (p1.gameObject.activeSelf)
+        if (p1 && p1.gameObject.activeSelf)
         {
             tempPos += p1.position;
             count++;
         }
-        if (p2.gameObject.activeSelf)
+        if (p2 && p2.gameObject.activeSelf)
         {
             tempPos += p2.position;
             count++;
         }
-        if (p3.gameObject.activeSelf)
+        if (p3 && p3.gameObject.activeSelf)
         {
             tempPos += p3.position;
             count++;
         }
-        if (p4.gameObject.activeSelf)
+        if (p4 && p4.gameObject.activeSelf)
         {
             tempPos += p4.position;
             count++;

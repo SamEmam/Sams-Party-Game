@@ -26,17 +26,7 @@ public class JoinManager : MonoBehaviour
 
     private void Start()
     {
-
-        //switch (controller)
-        //{
-        //    case XboxController.First: GetComponent<Renderer>().material = matRed; break;
-        //    case XboxController.Second: GetComponent<Renderer>().material = matGreen; break;
-        //    case XboxController.Third: GetComponent<Renderer>().material = matBlue; break;
-        //    case XboxController.Fourth: GetComponent<Renderer>().material = matYellow; break;
-        //}
-
-
-
+        
         // Call for the number of connected controllers once
         if (!didQueryNumOfCtrlrs)
         {
@@ -95,15 +85,8 @@ public class JoinManager : MonoBehaviour
             GameStats.Player4 = true;
             player4.SetActive(true);
         }
+        
 
-        //if (!GameStats.Player1)
-        //{
-        //    if (Input.GetButtonDown("Join_P1"))
-        //    {
-        //        GameStats.Player1 = true;
-        //        P1.text = "P1: " + GameStats.Player1;
-        //    }
-        //}
         
     }
     

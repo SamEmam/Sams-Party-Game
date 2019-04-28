@@ -42,7 +42,8 @@ public class SSBCountdown : MonoBehaviour
 
     IEnumerator EndScene()
     {
-        yield return new WaitForSeconds(5);
+        Time.timeScale = 0.25f;
+        yield return new WaitForSeconds(1);
         if (!GameStats.Player1 && !GameStats.Player2 && !GameStats.Player3 && !GameStats.Player4)
         {
             sceneFader.FadeTo("MainMenu");

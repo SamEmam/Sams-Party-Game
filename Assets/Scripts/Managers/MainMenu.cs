@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
 
     public SceneFader sceneFader;
 
+    
+
     public void Play()
     {
         sceneFader.FadeTo(levelToLoad);
@@ -22,24 +24,26 @@ public class MainMenu : MonoBehaviour
 
     public void RandomLevel()
     {
-
+        Debug.Log(GameStats.LevelPointer);
         //sceneFader.FadeTo(29);
         //return;
         //int index = Random.Range(16, 21);
 
-        if (GameStats.LevelPointer > GameStats.LevelList.Count - 1)
+        if (GameStats.LevelPointer == GameStats.MaxRounds)
         {
-            int index = Random.Range(3, 30);
-            if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
+            if (GameStats.EndlessGame)
             {
-                RandomLevel();
+                EndlessGame();
             }
             else
             {
-                GameStats.PreviousPreviousLevel = GameStats.PreviousLevel;
-                GameStats.PreviousLevel = index;
-                sceneFader.FadeTo(index);
+                EndGame();
             }
+        }
+
+        else if (GameStats.WreckedGame)
+        {
+            WreckedGame();
         }
 
         else
@@ -51,8 +55,45 @@ public class MainMenu : MonoBehaviour
             sceneFader.FadeTo(index);
         }
 
-        BonusLevel();
+        //run in SSEndGame.cs
+        //BonusLevel();
 
+    }
+
+    public void EndGame()
+    {
+        sceneFader.FadeTo("EndScene");
+    }
+
+    void WreckedGame()
+    {
+        int index = Random.Range(0, GameStats.WreckedList.Count);
+        index = GameStats.WreckedList[index];
+        if (index == GameStats.PreviousLevel)
+        {
+            RandomLevel();
+        }
+        else
+        {
+            GameStats.PreviousLevel = index;
+            GameStats.LevelPointer++;
+            sceneFader.FadeTo(index);
+        }
+    }
+
+    void EndlessGame()
+    {
+        int index = Random.Range(3, 30);
+        if (index == GameStats.PreviousLevel || index == GameStats.PreviousPreviousLevel)
+        {
+            RandomLevel();
+        }
+        else
+        {
+            GameStats.PreviousPreviousLevel = GameStats.PreviousLevel;
+            GameStats.PreviousLevel = index;
+            sceneFader.FadeTo(index);
+        }
     }
 
     public void BonusLevel()

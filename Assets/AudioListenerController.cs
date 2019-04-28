@@ -32,9 +32,12 @@ public class AudioListenerController : MonoBehaviour
             tempPos += p4.position;
             count++;
         }
-        
-        tempPos = tempPos / count;
 
+        if (count > 0)
+        {
+            tempPos = tempPos / count;
+        }
+        
         transform.position = Vector3.Lerp(transform.position, tempPos, speed * Time.deltaTime);
     }
 

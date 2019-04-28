@@ -4571,7 +4571,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 15
-  impactForce: 10000
+  impactForce: 4000
   spreadFactor: 0.1
   controller: 4
   firePoint: {fileID: 154903705}
@@ -8909,6 +8909,10 @@ PrefabInstance:
       propertyPath: light
       value: 
       objectReference: {fileID: 1519071748}
+    - target: {fileID: 973776838, guid: c7f6cb1d0f8028945894ebfcf516f493, type: 3}
+      propertyPath: impactForce
+      value: 4000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7f6cb1d0f8028945894ebfcf516f493, type: 3}
 --- !u!1 &973776837 stripped
@@ -10109,7 +10113,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 15
-  impactForce: 10000
+  impactForce: 4000
   spreadFactor: 0.1
   controller: 3
   firePoint: {fileID: 1881906983}
@@ -19672,7 +19676,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 15
-  impactForce: 10000
+  impactForce: 4000
   spreadFactor: 0.1
   controller: 2
   firePoint: {fileID: 1856980935}

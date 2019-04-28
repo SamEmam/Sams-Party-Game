@@ -41,7 +41,7 @@ public class PlayerScore : MonoBehaviour
         switch (playerNum)
         {
             case 1:
-                playerColorText =  "<color=#" + ColorUtility.ToHtmlStringRGB(Color.red) + ">PLAYER " + playerNum + "</color>";
+                playerColorText = "<color=#" + ColorUtility.ToHtmlStringRGB(Color.red) + ">PLAYER " + playerNum + "</color>";
                 break;
             case 2:
                 playerColorText = "<color=#" + ColorUtility.ToHtmlStringRGB(Color.blue) + ">PLAYER " + playerNum + "</color>";

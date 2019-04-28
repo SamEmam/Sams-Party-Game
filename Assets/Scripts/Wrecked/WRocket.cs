@@ -8,7 +8,7 @@ public class WRocket : MonoBehaviour
     public float impactForce;
     public ParticleSystem explosion;
 
-    private float radius = 10f;
+    private float radius = 20f;
     private float upwardsThrust = 10f;
 
     private void OnCollisionEnter(Collision collision)
@@ -17,7 +17,7 @@ public class WRocket : MonoBehaviour
         foreach(Collider hit in colliders)
         {
             Rigidbody hitRB = hit.GetComponent<Rigidbody>();
-            if (hitRB != null)
+            if (hitRB != null && !hit.GetComponent<WNotAffected>())
             {
                 hitRB.AddExplosionForce(impactForce, transform.position, radius, upwardsThrust, ForceMode.Impulse);
             }

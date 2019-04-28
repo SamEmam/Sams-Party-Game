@@ -6,10 +6,64 @@ public static class GameStats
 {
     private static int player1Score, player2Score, player3Score, player4Score, previousLevel, previousPreviousLevel;
     private static bool player1 = false, player2 = false, player3 = false, player4 = false;
-    private static List<int> levelList;
+    private static List<int> levelList, wreckedList;
     private static int levelPointer = 0;
     private static int roundsPlayed = 0;
     private static int bonusScenesPlayed = 0, levelsWithoutBonusScene = 0;
+    private static bool endlessGame = false, wreckedGame = false;
+    private static int maxRounds;
+
+    // get & set wrecked games
+    public static List<int> WreckedList
+    {
+        get
+        {
+            return wreckedList;
+        }
+        set
+        {
+            wreckedList = value;
+        }
+    }
+
+    // get & set wreckedGame
+    public static bool WreckedGame
+    {
+        get
+        {
+            return wreckedGame;
+        }
+        set
+        {
+            wreckedGame = value;
+        }
+    }
+
+    // get & set maxRounds
+    public static int MaxRounds
+    {
+        get
+        {
+            return maxRounds;
+        }
+        set
+        {
+            maxRounds = value;
+        }
+    }
+
+    // get & set endlessGame
+    public static bool EndlessGame
+    {
+        get
+        {
+            return endlessGame;
+        }
+        set
+        {
+            endlessGame = value;
+        }
+    }
 
     // get & set levels without bonus scene
     public static int LevelsWithoutBonusScene

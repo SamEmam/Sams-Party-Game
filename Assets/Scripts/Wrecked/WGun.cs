@@ -60,11 +60,12 @@ public class WGun : MonoBehaviour
             //    wTarget.TakeDamage(damage);
             //}
 
-            if (hit.rigidbody != null)
+            if (hit.rigidbody != null && !hit.transform.GetComponent<WNotAffected>())
             {
 
-                hit.rigidbody.AddForce(Vector3.up * (impactForce * 4));
-                hit.rigidbody.AddForce(-hit.normal * (impactForce / 2));
+                //hit.rigidbody.AddForce(Vector3.up * (impactForce * 4));
+                //hit.rigidbody.AddForce(-hit.normal * (impactForce * 4));
+                hit.rigidbody.AddForce(-hit.normal * impactForce, ForceMode.Impulse);
             }
 
             GameObject impactGO1 = Instantiate(impactEffect1, hit.point, Quaternion.LookRotation(hit.normal));

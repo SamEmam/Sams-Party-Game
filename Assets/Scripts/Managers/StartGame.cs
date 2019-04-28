@@ -10,9 +10,12 @@ public class StartGame : MonoBehaviour
     public XboxController controller;
     public int scenesInBuild = 32;
     public List<int> tempList;
+
+    public GameSettings gs;
+    public List<int> wreckedScenes;
     
 
-    private void Start()
+    private void Awake()
     {
         for (int i = 3; i <= scenesInBuild; i++)
         {
@@ -29,7 +32,8 @@ public class StartGame : MonoBehaviour
         }
 
         GameStats.LevelList = tempList;
-        Debug.Log(GameStats.LevelList.Count);
+
+        GameStats.WreckedList = wreckedScenes;
     }
 
     // Update is called once per frame
@@ -37,6 +41,22 @@ public class StartGame : MonoBehaviour
     {
         if (XCI.GetButtonDown(XboxButton.Start,controller))
         {
+            
+            switch (gs.pointer)
+            {
+                case 0:
+                    GameStats.MaxRounds = gs.amountOfGames;
+                    break;
+                case 1:
+                    GameStats.EndlessGame = true;
+                    break;
+                case 2:
+                    GameStats.MaxRounds = gs.amountOfGames;
+                    GameStats.WreckedGame = true;
+                    break;
+            }
+
+
             mainMenu.RandomLevel();
             GameStats.RoundsPlayed++;
         }

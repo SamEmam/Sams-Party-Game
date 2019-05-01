@@ -11,18 +11,36 @@ public class WMissile : MonoBehaviour
     public float impactForce = 10000f;
     public float fireForce = 500f;
     public float spreadFactor = 0.05f;
+    public int bulletCount = 3;
 
     [Header("Setup")]
     public XboxController controller;
     public Transform firePoint;
     public GameObject missile;
     public GameObject missileProjectile;
+    public WPowerUpPlayer wPUP;
+    public int powerUpNum = 1;
 
 
     private float nextTimeToFire = 0f;
 
+    private void Start()
+    {
+        wPUP = GetComponentInParent<WPowerUpPlayer>();
+    }
+
+    private void OnEnable()
+    {
+        bulletCount = 3;
+    }
+
     private void Update()
     {
+        if (bulletCount <= 0)
+        {
+            wPUP.DisablePowerUp(powerUpNum);
+        }
+
         if (Time.time >= nextTimeToFire)
         {
             missile.SetActive(true);
@@ -34,10 +52,13 @@ public class WMissile : MonoBehaviour
             missile.SetActive(false);
             Shoot();
         }
+
+
     }
 
     void Shoot()
     {
+        bulletCount--;
         var shootDirection = firePoint.rotation;
         shootDirection.x += Random.Range(-spreadFactor, spreadFactor);
         shootDirection.y += Random.Range(-spreadFactor, spreadFactor);

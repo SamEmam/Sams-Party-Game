@@ -15,6 +15,7 @@ public class WDestroyer : MonoBehaviour
 
     public GameObject player1, player2, player3, player4;
     private PlayerScore p1Score, p2Score, p3Score, p4Score;
+    private WPowerUpPlayer p1Up, p2Up, p3Up, p4Up;
     private bool p1IsAlive, p2IsAlive, p3IsAlive, p4IsAlive;
     private bool hasUpdatedScore = false;
     private bool updateCooldown = true;
@@ -40,24 +41,28 @@ public class WDestroyer : MonoBehaviour
         if (GameStats.Player1)
         {
             p1Score = player1.GetComponent<PlayerScore>();
+            p1Up = player1.GetComponent<WPowerUpPlayer>();
             p1Score.PlayerColor();
             p1IsAlive = true;
         }
         if (GameStats.Player2)
         {
             p2Score = player2.GetComponent<PlayerScore>();
+            p2Up = player2.GetComponent<WPowerUpPlayer>();
             p2Score.PlayerColor();
             p2IsAlive = true;
         }
         if (GameStats.Player3)
         {
             p3Score = player3.GetComponent<PlayerScore>();
+            p3Up = player3.GetComponent<WPowerUpPlayer>();
             p3Score.PlayerColor();
             p3IsAlive = true;
         }
         if (GameStats.Player4)
         {
            p4Score = player4.GetComponent<PlayerScore>();
+           p4Up = player4.GetComponent<WPowerUpPlayer>();
            p4Score.PlayerColor();
            p4IsAlive = true;
         }
@@ -95,6 +100,7 @@ public class WDestroyer : MonoBehaviour
             {
                 playersLeft = 0;
                 Respawn();
+                ResetPowerUps();
                 ResetPlayers();
                 SetRewardValue();
                 StartCoroutine(Cooldown());
@@ -259,16 +265,59 @@ public class WDestroyer : MonoBehaviour
         rewardValue++;
     }
 
+    void ResetPowerUps()
+    {
+        if (GameStats.Player1)
+        {
+            p1Up.DisableAll();
+        }
+        if (GameStats.Player2)
+        {
+            p2Up.DisableAll();
+        }
+        if (GameStats.Player3)
+        {
+            p3Up.DisableAll();
+        }
+        if (GameStats.Player4)
+        {
+            p4Up.DisableAll();
+        }
+    }
+
     void Respawn()
     {
         spawnPositions = new List<Vector3>();
-        spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * -2));
-        spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * 2));
-        if (XboxCtrlrInput.XCI.GetNumPluggedCtrlrs() > 2)
+
+        switch (XboxCtrlrInput.XCI.GetNumPluggedCtrlrs())
         {
-            spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -10) + (spawnPoint.right * -2));
-            spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -10) + (spawnPoint.right * 2));
+            case 1:
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * -2));
+                break;
+            case 2:
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * -2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * 2));
+                break;
+            case 3:
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * -2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * 2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -10) + (spawnPoint.right * -2));
+                break;
+            case 4:
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * -2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * 2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -10) + (spawnPoint.right * -2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -10) + (spawnPoint.right * 2));
+                break;
+            default:
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * -2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -2) + (spawnPoint.right * 2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -10) + (spawnPoint.right * -2));
+                spawnPositions.Add(spawnPoint.position + (spawnPoint.forward * -10) + (spawnPoint.right * 2));
+                break;
         }
+
+
         for (int i = 0; i < spawnPositions.Count; i++)
         {
             Vector3 temp = spawnPositions[i];
@@ -276,31 +325,31 @@ public class WDestroyer : MonoBehaviour
             spawnPositions[i] = spawnPositions[randomIndex];
             spawnPositions[randomIndex] = temp;
         }
-            Debug.Log("Respawning!");
-        if (player1)
+        Debug.Log("Respawning!");
+        if (GameStats.Player1)
         {
             player1.transform.position = spawnPositions[0];
+            player1.transform.rotation = spawnPoint.rotation;
+            player1.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
-        if (player2)
+        if (GameStats.Player2)
         {
             player2.transform.position = spawnPositions[1];
+            player2.transform.rotation = spawnPoint.rotation;
+            player2.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
-        if (player3)
+        if (GameStats.Player3)
         {
             player3.transform.position = spawnPositions[2];
+            player3.transform.rotation = spawnPoint.rotation;
+            player3.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
-        if (player4)
+        if (GameStats.Player4)
         {
             player4.transform.position = spawnPositions[3];
+            player4.transform.rotation = spawnPoint.rotation;
+            player4.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
-        player1.transform.rotation = spawnPoint.rotation;
-        player2.transform.rotation = spawnPoint.rotation;
-        player3.transform.rotation = spawnPoint.rotation;
-        player4.transform.rotation = spawnPoint.rotation;
-        player1.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        player2.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        player3.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        player4.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     void UnAlivePlayer(PlayerScore ps)

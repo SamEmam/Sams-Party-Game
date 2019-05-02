@@ -5,21 +5,27 @@ using UnityEngine.UI;
 
 public class WDestroyer : MonoBehaviour
 {
+    [Header("Preferences")]
     public Transform spawnPoint;
-    public int playersLeft;
     public int winScore;
-    public SceneFader sceneFader;
+    public bool masterDestroyer = false;
 
+    [Header("Setup")]
+    public SceneFader sceneFader;
     public WDestroyer otherDestroyer;
     public Text message;
+    public AudioListenerController audioLC;
+    public WPointsBar barp1, barp2, barp3, barp4;
 
+    [Header("Vehicle Setup")]
+    public int playersLeft;
     public GameObject player1, player2, player3, player4;
+    public GameObject[] p1Vehicles, p2Vehicles, p3Vehicles, p4Vehicles;
     private PlayerScore p1Score, p2Score, p3Score, p4Score;
     private WPowerUpPlayer p1Up, p2Up, p3Up, p4Up;
     private bool p1IsAlive, p2IsAlive, p3IsAlive, p4IsAlive;
     private bool hasUpdatedScore = false;
     private bool updateCooldown = true;
-    public bool masterDestroyer = false;
 
     private List<Vector3> spawnPositions;
 
@@ -33,38 +39,59 @@ public class WDestroyer : MonoBehaviour
         {
             return;
         }
-        player1.SetActive(false);
-        player2.SetActive(false);
-        player3.SetActive(false);
-        player4.SetActive(false);
+
+        int rng = Random.Range(0, p1Vehicles.Length);
+
+        
+        
 
         if (GameStats.Player1)
         {
+            p1Vehicles[rng].SetActive(true);
+            player1 = p1Vehicles[rng];
+            otherDestroyer.player1 = player1;
+            audioLC.p1 = player1.transform;
             p1Score = player1.GetComponent<PlayerScore>();
+            
             p1Up = player1.GetComponent<WPowerUpPlayer>();
             p1Score.PlayerColor();
             p1IsAlive = true;
         }
         if (GameStats.Player2)
         {
+            p2Vehicles[rng].SetActive(true);
+            player2 = p2Vehicles[rng];
+            otherDestroyer.player2 = player2;
+            audioLC.p2 = player2.transform;
             p2Score = player2.GetComponent<PlayerScore>();
+            
             p2Up = player2.GetComponent<WPowerUpPlayer>();
             p2Score.PlayerColor();
             p2IsAlive = true;
         }
         if (GameStats.Player3)
         {
+            p3Vehicles[rng].SetActive(true);
+            player3 = p3Vehicles[rng];
+            otherDestroyer.player3 = player3;
+            audioLC.p3 = player3.transform;
             p3Score = player3.GetComponent<PlayerScore>();
+            
             p3Up = player3.GetComponent<WPowerUpPlayer>();
             p3Score.PlayerColor();
             p3IsAlive = true;
         }
         if (GameStats.Player4)
         {
-           p4Score = player4.GetComponent<PlayerScore>();
-           p4Up = player4.GetComponent<WPowerUpPlayer>();
-           p4Score.PlayerColor();
-           p4IsAlive = true;
+            p4Vehicles[rng].SetActive(true);
+            player4 = p4Vehicles[rng];
+            otherDestroyer.player4 = player4;
+            audioLC.p4 = player4.transform;
+            p4Score = player4.GetComponent<PlayerScore>();
+            
+            p4Up = player4.GetComponent<WPowerUpPlayer>();
+            p4Score.PlayerColor();
+            p4IsAlive = true;
         }
 
         ResetPlayers();
@@ -99,6 +126,7 @@ public class WDestroyer : MonoBehaviour
             else
             {
                 playersLeft = 0;
+                otherDestroyer.playersLeft = 0;
                 Respawn();
                 ResetPowerUps();
                 ResetPlayers();
@@ -126,6 +154,25 @@ public class WDestroyer : MonoBehaviour
         sceneFader.FadeTo("ScoreScene");
     }
 
+    public PlayerScore GetPlayerScore(int playerNum)
+    {
+        PlayerScore ps = p1Score;
+        switch (playerNum)
+        {
+            case 1:
+                return p1Score;
+            case 2:
+                return p2Score;
+            case 3:
+                return p3Score;
+            case 4:
+                return p4Score;
+        }
+        return ps;
+    }
+
+        
+
     void RewardWinner(int playerNum)
     {
         Debug.Log("RewardWinner: " + playerNum);
@@ -134,21 +181,26 @@ public class WDestroyer : MonoBehaviour
             case 1:
                 GameStats.Player1Score++;
                 message.text += p1Score.playerColorText + " WINS!";
+                Instantiate(p1Score.finishParticles, player1.transform.position, Quaternion.LookRotation(Vector3.up));
                 break;
             case 2:
                 GameStats.Player2Score++;
                 message.text += p2Score.playerColorText + " WINS!";
+                Instantiate(p2Score.finishParticles, player2.transform.position, Quaternion.LookRotation(Vector3.up));
                 break;
             case 3:
                 GameStats.Player3Score++;
                 message.text += p3Score.playerColorText + " WINS!";
+                Instantiate(p3Score.finishParticles, player3.transform.position, Quaternion.LookRotation(Vector3.up));
                 break;
             case 4:
                 GameStats.Player4Score++;
                 message.text += p4Score.playerColorText + " WINS!";
+                Instantiate(p4Score.finishParticles, player4.transform.position, Quaternion.LookRotation(Vector3.up));
                 break;
         }
     }
+    
 
     int CheckForWinner()
     {
@@ -181,18 +233,22 @@ public class WDestroyer : MonoBehaviour
         if (p1IsAlive)
         {
             UpdateScore(p1Score);
+            //barp1.ps.score = p1Score.score;
         }
         else if (p2IsAlive)
         {
             UpdateScore(p2Score);
+            //barp2.ps.score = p2Score.score;
         }
         else if (p3IsAlive)
         {
             UpdateScore(p3Score);
+            //barp3.ps.score = p3Score.score;
         }
         else if (p4IsAlive)
         {
             UpdateScore(p4Score);
+            //barp4.ps.score = p4Score.score;
         }
     }
 
@@ -223,6 +279,7 @@ public class WDestroyer : MonoBehaviour
             playersLeft++;
             p4IsAlive = true;
         }
+        otherDestroyer.playersLeft = playersLeft;
         
     }
 
@@ -248,6 +305,7 @@ public class WDestroyer : MonoBehaviour
         {
             rewardValue++;
         }
+        otherDestroyer.rewardValue = rewardValue;
     }
 
     void UpdateScore(PlayerScore score)
@@ -263,6 +321,7 @@ public class WDestroyer : MonoBehaviour
             score.score = 0;
         }
         rewardValue++;
+        otherDestroyer.rewardValue = rewardValue;
     }
 
     void ResetPowerUps()
@@ -382,13 +441,25 @@ public class WDestroyer : MonoBehaviour
         {
             if (playersLeft > 1)
             {
-                playersLeft--;
-                PlayerScore ps = other.GetComponent<PlayerScore>();
-                UpdateScore(ps);
-                UnAlivePlayer(ps);
-                otherDestroyer.playersLeft--;
-                //other.gameObject.SetActive(false);
-                Instantiate(ps.finishParticles, other.transform.position, Quaternion.LookRotation(Vector3.up));
+                if (masterDestroyer)
+                {
+                    playersLeft--;
+                    PlayerScore ps = other.GetComponent<PlayerScore>();
+                    UpdateScore(ps);
+                    UnAlivePlayer(ps);
+                    otherDestroyer.playersLeft = playersLeft;
+                    //other.gameObject.SetActive(false);
+                }
+                else
+                {
+                    otherDestroyer.playersLeft--;
+                    PlayerScore ps = other.GetComponent<PlayerScore>();
+                    otherDestroyer.UpdateScore(ps);
+                    otherDestroyer.UnAlivePlayer(ps);
+                    playersLeft = otherDestroyer.playersLeft;
+
+                }
+                
             }
         }
     }

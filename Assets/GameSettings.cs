@@ -11,6 +11,7 @@ public class GameSettings : MonoBehaviour
     public GameObject wrecked;
     public int amountOfGames;
     public int pointer = 0;
+    public RoundsCounter rc;
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +32,21 @@ public class GameSettings : MonoBehaviour
                 case 0:
                     oneOfEach.SetActive(false);
                     endless.SetActive(true);
+                    rc.DestroyScore();
                     pointer = 1;
                     break;
                 case 1:
                     endless.SetActive(false);
                     wrecked.SetActive(true);
+                    rc.DestroyScore();
+                    rc.BuildScore();
                     pointer = 2;
                     break;
                 case 2:
                     wrecked.SetActive(false);
                     oneOfEach.SetActive(true);
+                    rc.DestroyScore();
+                    rc.BuildScore();
                     pointer = 0;
                     break;
             }
@@ -53,19 +59,28 @@ public class GameSettings : MonoBehaviour
                 case 0:
                     oneOfEach.SetActive(false);
                     wrecked.SetActive(true);
+                    rc.DestroyScore();
+                    rc.BuildScore();
                     pointer = 2;
                     break;
                 case 1:
                     endless.SetActive(false);
                     oneOfEach.SetActive(true);
+                    rc.DestroyScore();
+                    rc.BuildScore();
                     pointer = 0;
                     break;
                 case 2:
                     wrecked.SetActive(false);
                     endless.SetActive(true);
+                    rc.DestroyScore();
                     pointer = 1;
                     break;
             }
+        }
+        if (pointer == 1)
+        {
+            return;
         }
 
         if (XCI.GetButtonDown(XboxButton.DPadUp, controller))

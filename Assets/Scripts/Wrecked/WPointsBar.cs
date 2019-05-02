@@ -8,22 +8,31 @@ public class WPointsBar : MonoBehaviour
 {
 
     public PlayerScore ps;
+    public int playerNum;
     public WDestroyer destroyer;
     public Image imgPointsBar;
     public TextMeshProUGUI txtPoints;
     public int min, max;
     public GameObject canvas;
+    private bool canUpdate = true;
 
     private int currentValue;
     private float currenctPercent;
 
     private void Start()
     {
-        if (!ps.transform.gameObject.activeSelf)
+            ps = destroyer.GetPlayerScore(playerNum);
+        if (!ps || !ps.transform.gameObject.activeInHierarchy)
         {
+            canUpdate = false;
             canvas.SetActive(false);
         }
-        max = destroyer.winScore;
+        else
+        {
+            max = destroyer.winScore;
+            Debug.Log("PointsBar: " + gameObject.name);
+        }
+        
     }
 
     public void SetPoints(int points)
@@ -49,7 +58,15 @@ public class WPointsBar : MonoBehaviour
 
     private void LateUpdate()
     {
-        SetPoints(ps.score);
+        if (!ps)
+        {
+            canUpdate = false;
+            canvas.SetActive(false);
+        }
+        if (canUpdate)
+        {
+            SetPoints(ps.score);
+        }
     }
 
     public float CurrentPercent

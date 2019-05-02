@@ -15,12 +15,22 @@ public class RoundsCounter : MonoBehaviour
         if (gs.amountOfGames != counter)
         {
             counter = gs.amountOfGames;
-            foreach (GameObject score in spawnedScore)
-            {
-                Destroy(score);
-            }
-            StringToCharArray(counter.ToString(), transform);
+            DestroyScore();
+            BuildScore();
         }
+    }
+
+    public void DestroyScore()
+    {
+        foreach (GameObject score in spawnedScore)
+        {
+            Destroy(score);
+        }
+    }
+
+    public void BuildScore()
+    {
+        StringToCharArray(counter.ToString(), transform);
     }
 
 

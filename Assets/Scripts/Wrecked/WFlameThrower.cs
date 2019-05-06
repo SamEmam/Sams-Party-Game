@@ -17,9 +17,11 @@ public class WFlameThrower : MonoBehaviour
     private void OnEnable()
     {
         flame.Stop();
+        flame.Clear();
         if (flame2)
         {
             flame2.Stop();
+            flame2.Clear();
         }
     }
 
@@ -32,9 +34,11 @@ public class WFlameThrower : MonoBehaviour
         if (XCI.GetButtonUp(XboxButton.A, controller))
         {
             flame.Stop();
+            flame.Clear();
             if (flame2)
             {
                 flame2.Stop();
+                flame2.Clear();
             }
         }
     }

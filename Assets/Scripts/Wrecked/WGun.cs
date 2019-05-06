@@ -66,6 +66,8 @@ public class WGun : MonoBehaviour
                 //hit.rigidbody.AddForce(Vector3.up * (impactForce * 4));
                 //hit.rigidbody.AddForce(-hit.normal * (impactForce * 4));
                 hit.rigidbody.AddForce(-hit.normal * impactForce, ForceMode.Impulse);
+                var torque = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), Random.Range(-2, 2));
+                hit.rigidbody.AddTorque(torque * impactForce / 5, ForceMode.Impulse);
             }
 
             GameObject impactGO1 = Instantiate(impactEffect1, hit.point, Quaternion.LookRotation(hit.normal));

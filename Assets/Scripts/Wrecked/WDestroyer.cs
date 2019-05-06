@@ -8,6 +8,7 @@ public class WDestroyer : MonoBehaviour
     [Header("Preferences")]
     public Transform spawnPoint;
     public int winScore;
+    private int winScoreHalf;
     public bool masterDestroyer = false;
 
     [Header("Setup")]
@@ -35,6 +36,7 @@ public class WDestroyer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        winScoreHalf = winScore / 2;
         if (!masterDestroyer)
         {
             return;
@@ -96,6 +98,7 @@ public class WDestroyer : MonoBehaviour
 
         ResetPlayers();
         SetRewardValue();
+        
         StartCoroutine(Cooldown());
     }
 
@@ -140,8 +143,14 @@ public class WDestroyer : MonoBehaviour
 
     IEnumerator Cooldown()
     {
+        if (playersLeft < 3)
+        {
+            winScore = winScoreHalf;
+        }
         yield return new WaitForSeconds(2);
+        
         updateCooldown = false;
+
     }
 
     IEnumerator EndScene()
@@ -280,6 +289,8 @@ public class WDestroyer : MonoBehaviour
             p4IsAlive = true;
         }
         otherDestroyer.playersLeft = playersLeft;
+
+        
         
     }
 

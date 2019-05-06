@@ -15,6 +15,7 @@ public class WPointsBar : MonoBehaviour
     public int min, max;
     public GameObject canvas;
     private bool canUpdate = true;
+    private bool overrideUpdate = true;
 
     private int currentValue;
     private float currenctPercent;
@@ -37,6 +38,7 @@ public class WPointsBar : MonoBehaviour
 
     public void SetPoints(int points)
     {
+        
         if (points != currentValue)
         {
             if (max - min == 0)
@@ -50,14 +52,28 @@ public class WPointsBar : MonoBehaviour
                 currenctPercent = (float)currentValue / (float)(max - min);
             }
             txtPoints.text = currentValue + " / " + max;
-            //txtPoints.text = string.Format("{0} %", Mathf.RoundToInt(currenctPercent * 100));
 
             imgPointsBar.fillAmount = currenctPercent;
         }
     }
+     private void OverrideSetPoints(int points)
+    {
+        overrideUpdate = false;
+        max = destroyer.winScore;
+        currentValue = points;
+        currenctPercent = (float)currentValue / (float)(max - min);
+    
+        txtPoints.text = currentValue + " / " + max;
+        imgPointsBar.fillAmount = currenctPercent;
+
+    }
 
     private void LateUpdate()
     {
+        if (overrideUpdate)
+        {
+            OverrideSetPoints(ps.score);
+        }
         if (!ps)
         {
             canUpdate = false;

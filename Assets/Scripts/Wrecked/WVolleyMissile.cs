@@ -17,6 +17,7 @@ public class WVolleyMissile : MonoBehaviour
     public Rigidbody rb;
     public ParticleSystem thrustParticle;
     public ParticleSystem explosion;
+    private ParticleSystem.EmissionModule emit;
     private Transform closetsTarget;
 
     private float radius = 10f;
@@ -24,8 +25,8 @@ public class WVolleyMissile : MonoBehaviour
 
     private void Start()
     {
-        thrustParticle.Stop();
-        thrustParticle.Clear();
+        emit = thrustParticle.emission;
+        //emit.enabled = false;
         StartCoroutine(StartDelay());
     }
 
@@ -41,7 +42,7 @@ public class WVolleyMissile : MonoBehaviour
     IEnumerator StartDelay()
     {
         yield return new WaitForSeconds(delayBeforeActive);
-        thrustParticle.Play();
+        //emit.enabled = true;
         FindNearestTarget();
         isActive = true;
     }

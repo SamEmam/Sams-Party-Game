@@ -13,6 +13,8 @@ public class SSBCountdown : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("SpawnCountdown", 1f, 1f);
+        GameStats.BonusScenesPlayed++;
+        GameStats.LevelsWithoutBonusScene = 0;
     }
 
     private void Update()
@@ -42,9 +44,9 @@ public class SSBCountdown : MonoBehaviour
 
     IEnumerator EndScene()
     {
-        Time.timeScale = 0.25f;
+        //Time.timeScale = 0.25f;
         yield return new WaitForSeconds(1);
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         if (!GameStats.Player1 && !GameStats.Player2 && !GameStats.Player3 && !GameStats.Player4)
         {
             sceneFader.FadeTo("MainMenu");

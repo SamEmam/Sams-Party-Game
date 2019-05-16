@@ -70,11 +70,11 @@ MonoBehaviour:
       screenEdgeMask:
         intensity: 0.03
   depthOfField:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
-      focusDistance: 1
-      aperture: 1.5
-      focalLength: 20
+      focusDistance: 2
+      aperture: 9
+      focalLength: 50
       useCameraFov: 0
       kernelSize: 1
   motionBlur:
@@ -104,7 +104,7 @@ MonoBehaviour:
         intensity: 0.05
         threshold: 1.1
         softKnee: 0.5
-        radius: 4
+        radius: 2
         antiFlicker: 1
       lensDirt:
         texture: {fileID: 0}

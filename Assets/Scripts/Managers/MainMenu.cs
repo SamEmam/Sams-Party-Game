@@ -141,9 +141,7 @@ public class MainMenu : MonoBehaviour
             if (random <= range)
             {
                 sceneFader.FadeTo(2);
-                GameStats.LevelPointer--;
-                GameStats.BonusScenesPlayed++;
-                GameStats.LevelsWithoutBonusScene = 0;
+                
             }
             else
             {

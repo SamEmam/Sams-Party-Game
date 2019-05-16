@@ -147,6 +147,11 @@ public class WDestroyer : MonoBehaviour
         {
             winScore = winScoreHalf;
         }
+
+        if (!GameStats.WreckedGame)
+        {
+            winScore = winScoreHalf;
+        }
         yield return new WaitForSeconds(2);
         
         updateCooldown = false;
